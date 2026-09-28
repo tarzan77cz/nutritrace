@@ -2,7 +2,7 @@
   import { closeOnBack } from '../lib/back-stack.js';
   import { onMount, onDestroy } from 'svelte';
   import { slide } from 'svelte/transition';
-  import { _ } from 'svelte-i18n';
+  import { _, locale } from 'svelte-i18n';
   import { tr } from '../lib/i18n-label.js';
   import { push } from 'svelte-spa-router';
   import { portal } from '../lib/portal.js';
@@ -124,30 +124,30 @@
       ...(_wlVisible('spo2_avg')          ? [{ value: 'wl_spo2',   label: 'SpO2',          unit: '%',     apiSource: 'fitgarm', apiField: 'spo2_avg' }] : []),
     ] : []),
     ...(($withingsEnabled || $fitbitFamilyEnabled) && _wlVisible('muscle_mass_kg') ? [
-      { value: 'wl_muscle', label: tr($_, 'body_metrics', 'muscle', 'Muscle Mass'), unit: '', apiSource: 'withings', apiField: 'muscle_mass_kg', isWeight: true },
+      { value: 'wl_muscle', label: tr('body_metrics', 'muscle', 'Muscle Mass', $locale), unit: '', apiSource: 'withings', apiField: 'muscle_mass_kg', isWeight: true },
     ] : []),
   ];
 
   // All available metrics = NUTRIMENTS + body stats + wellness
   $: BODY_STATS = [
-    { value: 'weight',     label: tr($_, 'body_metrics', 'weight', 'Weight'),     unit: $weightUnit || 'lb' },
-    { value: 'neck',       label: tr($_, 'body_metrics', 'neck', 'Neck'),         unit: $lengthUnit || 'in' },
-    { value: 'waist',      label: tr($_, 'body_metrics', 'waist', 'Waist'),       unit: $lengthUnit || 'in' },
-    { value: 'hips',       label: tr($_, 'body_metrics', 'hips', 'Hips'),         unit: $lengthUnit || 'in' },
-    { value: 'chest',      label: tr($_, 'body_metrics', 'chest', 'Chest'),       unit: $lengthUnit || 'in' },
-    { value: 'thighs',     label: tr($_, 'body_metrics', 'thighs', 'Thighs'),     unit: $lengthUnit || 'in' },
-    { value: 'biceps',     label: tr($_, 'body_metrics', 'biceps', 'Biceps'),     unit: $lengthUnit || 'in' },
-    { value: 'calves',     label: tr($_, 'body_metrics', 'calves', 'Calves'),     unit: $lengthUnit || 'in' },
-    { value: 'body_fat',   label: tr($_, 'body_metrics', 'body_fat', 'Body Fat'), unit: '%'  },
-    { value: 'body_water', label: tr($_, 'body_metrics', 'body_water', 'Body Water'), unit: '%'  },
+    { value: 'weight',     label: tr('body_metrics', 'weight', 'Weight', $locale),     unit: $weightUnit || 'lb' },
+    { value: 'neck',       label: tr( 'body_metrics', 'neck', 'Neck'),         unit: $lengthUnit || 'in' },
+    { value: 'waist',      label: tr( 'body_metrics', 'waist', 'Waist'),       unit: $lengthUnit || 'in' },
+    { value: 'hips',       label: tr( 'body_metrics', 'hips', 'Hips'),         unit: $lengthUnit || 'in' },
+    { value: 'chest',      label: tr( 'body_metrics', 'chest', 'Chest'),       unit: $lengthUnit || 'in' },
+    { value: 'thighs',     label: tr( 'body_metrics', 'thighs', 'Thighs'),     unit: $lengthUnit || 'in' },
+    { value: 'biceps',     label: tr( 'body_metrics', 'biceps', 'Biceps'),     unit: $lengthUnit || 'in' },
+    { value: 'calves',     label: tr( 'body_metrics', 'calves', 'Calves'),     unit: $lengthUnit || 'in' },
+    { value: 'body_fat',   label: tr( 'body_metrics', 'body_fat', 'Body Fat'), unit: '%'  },
+    { value: 'body_water', label: tr( 'body_metrics', 'body_water', 'Body Water'), unit: '%'  },
   ];
   // Metric identifier: nutriments use `.id`, everything else uses `.value`.
   // Coalesce so the ordering + hide stores work with a single string key.
   function _metricKey(m) { return m?.value ?? m?.id; }
   $: _rawMetrics = [
-    ...NUTRIMENTS.filter(n => n.default).map(n => ({ ...n, label: tr($_, 'nutriments', n.id, n.label) })),
+    ...NUTRIMENTS.filter(n => n.default).map(n => ({ ...n, label: tr('nutriments', n.id, n.label, $locale) })),
     ...BODY_STATS.filter(s => !($hiddenBodyStats||[]).includes(s.value)),
-    ...(_waterShowInStats ? [{ value: 'water', label: tr($_, 'body_metrics', 'water', 'Water'), unit: _waterUnit }] : []),
+    ...(_waterShowInStats ? [{ value: 'water', label: tr( 'body_metrics', 'water', 'Water'), unit: _waterUnit }] : []),
     ...WELLNESS_METRICS,
   ];
   // Apply the user's Statistics-specific hide list, then reorder by the

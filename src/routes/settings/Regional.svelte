@@ -1,5 +1,5 @@
 <script>
-  import { _ } from 'svelte-i18n';
+  import { _, locale } from 'svelte-i18n';
   import { DB } from '../../lib/db.js';
   import { AVAILABLE_LOCALES } from '../../i18n/index.js';
   import { scheduleSave } from '../../stores/settings.js';
@@ -7,9 +7,12 @@
     language, dateFormat, timeFormat, energyUnit,
   } from '../../stores/settings.js';
 
-  $: ENERGY_OPTS = [
+  $: ENERGY_OPTS = $locale ? [
     { value: 'kcal', label: $_('settings.regional.energy_kcal') },
     { value: 'kJ',   label: $_('settings.regional.energy_kj') },
+  ] : [
+    { value: 'kcal', label: 'Calories (kcal)' },
+    { value: 'kJ',   label: 'Kilojoules (kJ)' },
   ];
 
   // Save-on-change helper — matches parent's `set()` helper.

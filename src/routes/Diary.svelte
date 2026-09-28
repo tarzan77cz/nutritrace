@@ -3,7 +3,7 @@
   import { onMount, onDestroy, tick } from 'svelte';
   import { fold } from '../lib/fold.js';
   import { push } from 'svelte-spa-router';
-  import { _ } from 'svelte-i18n';
+  import { _, locale } from 'svelte-i18n';
   import { tr } from '../lib/i18n-label.js';
   import DatePicker from '../components/ui/DatePicker.svelte';
   import DateInput  from '../components/ui/DateInput.svelte';
@@ -1196,6 +1196,7 @@
 
   // Nutrition bar: visible NUTRIMENTS that have goals set
   $: nutritionBarItems = (() => {
+    void $locale;
     if (!$diaryShowNutritionBar) return [];
     return NUTRIMENTS
       .filter(n => n.default && $goals[n.id] && $goals[n.id].showInDiary !== false)
@@ -1223,7 +1224,7 @@
           dispTgt = tgt != null ? Nutrition.kcalToKj(tgt) : tgt;
           dispUnit = 'kJ';
         }
-        return { ...n, label: tr($_, 'nutriments', n.id, n.label), cur: dispCur, rem, tgt: dispTgt, pct, over, unit: dispUnit };
+        return { ...n, label: tr( 'nutriments', n.id, n.label), cur: dispCur, rem, tgt: dispTgt, pct, over, unit: dispUnit };
       });
   })();
 
@@ -3140,7 +3141,7 @@
             <div class="ns-row ns-row-clickable" role="button" tabindex="0"
                  on:click={() => _nsToggle(n.id)}
                  on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); _nsToggle(n.id); } }}>
-              <span>{tr($_, 'nutriments', n.id, n.label)}</span>
+              <span>{tr( 'nutriments', n.id, n.label)}</span>
               <span class="ns-row-right">
                 <span class="font-medium">{(Math.round((totals[n.id]||0)*10)/10).toLocaleString()} {n.unit}</span>
                 <span class="material-symbols-rounded ns-chev" class:open={isOpen}>chevron_right</span>
@@ -3213,7 +3214,7 @@
     <div class="ns-rows">
       {#each NUTRIMENTS.filter(n => ($diaryShowAllNutrients ? true : n.default) && (_mealTotals[n.id] || 0) > 0) as n}
         <div class="ns-row">
-          <span>{tr($_, 'nutriments', n.id, n.label)}</span>
+          <span>{tr( 'nutriments', n.id, n.label)}</span>
           <span class="font-medium">{(Math.round((_mealTotals[n.id]||0)*10)/10).toLocaleString()} {n.unit}</span>
         </div>
       {/each}

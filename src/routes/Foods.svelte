@@ -1,7 +1,7 @@
 <script>
   import { onMount, onDestroy, tick } from 'svelte';
   import { push, location } from 'svelte-spa-router';
-  import { _ } from 'svelte-i18n';
+  import { _, locale } from 'svelte-i18n';
   import { closeOnBack } from '../lib/back-stack.js';
   import { fade, fly, slide } from 'svelte/transition';
 
@@ -47,10 +47,14 @@
   $: pickMeal  = params.meal;
   $: pickDate  = params.date;
 
-  $: TABS = [
+  $: TABS = $locale ? [
     { label: $_('foods.tabs.foods'),   value: 'foodList' },
     { label: $_('foods.tabs.meals'),   value: 'meals' },
     { label: $_('foods.tabs.recipes'), value: 'recipes' },
+  ] : [
+    { label: 'Foods',   value: 'foodList' },
+    { label: 'Meals',   value: 'meals' },
+    { label: 'Recipes', value: 'recipes' },
   ];
   let activeTab = 0;
   // Reset source + category filter when switching tabs (not when searchSource itself changes)

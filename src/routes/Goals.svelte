@@ -2,7 +2,7 @@
   import { closeOnBack } from '../lib/back-stack.js';
   import { onMount, tick } from 'svelte';
   import { slide } from 'svelte/transition';
-  import { _ } from 'svelte-i18n';
+  import { _, locale } from 'svelte-i18n';
   import { tr } from '../lib/i18n-label.js';
   import { push } from 'svelte-spa-router';
   import { DB, localDateStr } from '../lib/db.js';
@@ -25,16 +25,16 @@
   $: _hasWearable = $fitbitFamilyEnabled || $garminEnabled;
 
   $: BODY_STATS = [
-    { id: 'weight',     label: tr($_, 'body_metrics', 'weight', 'Weight'),     isBody: true },
-    { id: 'neck',       label: tr($_, 'body_metrics', 'neck', 'Neck'),         isBody: true },
-    { id: 'waist',      label: tr($_, 'body_metrics', 'waist', 'Waist'),       isBody: true },
-    { id: 'hips',       label: tr($_, 'body_metrics', 'hips', 'Hips'),         isBody: true },
-    { id: 'chest',      label: tr($_, 'body_metrics', 'chest', 'Chest'),       isBody: true },
-    { id: 'thighs',     label: tr($_, 'body_metrics', 'thighs', 'Thighs'),     isBody: true },
-    { id: 'biceps',     label: tr($_, 'body_metrics', 'biceps', 'Biceps'),     isBody: true },
-    { id: 'calves',     label: tr($_, 'body_metrics', 'calves', 'Calves'),     isBody: true },
-    { id: 'body_fat',   label: tr($_, 'body_metrics', 'body_fat', 'Body Fat'), isBody: true, unit: '%' },
-    { id: 'body_water', label: tr($_, 'body_metrics', 'body_water', 'Body Water'), isBody: true, unit: '%' },
+    { id: 'weight',     label: tr('body_metrics', 'weight', 'Weight', $locale),     isBody: true },
+    { id: 'neck',       label: tr( 'body_metrics', 'neck', 'Neck'),         isBody: true },
+    { id: 'waist',      label: tr( 'body_metrics', 'waist', 'Waist'),       isBody: true },
+    { id: 'hips',       label: tr( 'body_metrics', 'hips', 'Hips'),         isBody: true },
+    { id: 'chest',      label: tr( 'body_metrics', 'chest', 'Chest'),       isBody: true },
+    { id: 'thighs',     label: tr( 'body_metrics', 'thighs', 'Thighs'),     isBody: true },
+    { id: 'biceps',     label: tr( 'body_metrics', 'biceps', 'Biceps'),     isBody: true },
+    { id: 'calves',     label: tr( 'body_metrics', 'calves', 'Calves'),     isBody: true },
+    { id: 'body_fat',   label: tr( 'body_metrics', 'body_fat', 'Body Fat'), isBody: true, unit: '%' },
+    { id: 'body_water', label: tr( 'body_metrics', 'body_water', 'Body Water'), isBody: true, unit: '%' },
   ];
 
   $: wUnit = $weightUnit || 'kg';
@@ -51,20 +51,20 @@
     if (n.id === 'kilojoules' && ($energyUnit||'kcal') === 'kcal') return false;
     if (n.id === 'calories'   && ($energyUnit||'kcal') === 'kJ') return false;
     return true;
-  }).map(n => ({ ...n, label: tr($_, 'nutriments', n.id, n.label) }));
+  }).map(n => ({ ...n, label: tr('nutriments', n.id, n.label, $locale) }));
 
   // Wellness goal fields (shown when wellness is enabled)
   $: WELLNESS_GOALS = [
-    { id: 'steps',              label: tr($_, 'wellness_goals', 'steps', 'Daily Steps'),             unit: 'steps', isWellness: true },
-    { id: 'active_minutes',     label: tr($_, 'wellness_goals', 'active_minutes', 'Active Minutes'), unit: 'min',   isWellness: true },
-    { id: 'floors',             label: tr($_, 'wellness_goals', 'floors', 'Floors Climbed'),         unit: 'floors',isWellness: true },
-    { id: 'calories_out',       label: tr($_, 'wellness_goals', 'calories_out', 'Calories Burned'),   unit: 'kcal',  isWellness: true },
-    { id: 'sleep_duration_min', label: tr($_, 'wellness_goals', 'sleep_duration_min', 'Sleep Duration'), unit: 'min', isWellness: true },
-    { id: 'sleep_efficiency',   label: tr($_, 'wellness_goals', 'sleep_efficiency', 'Sleep Efficiency'), unit: '%', isWellness: true },
-    { id: 'hrv_daily_rmssd',    label: tr($_, 'wellness_goals', 'hrv_daily_rmssd', 'HRV (RMSSD)'),   unit: 'ms',    isWellness: true },
-    { id: 'weight_kg',          label: tr($_, 'wellness_goals', 'weight_kg', 'Target Weight'),       unit: 'kg',    isWellness: true },
-    { id: 'body_fat_pct',       label: tr($_, 'wellness_goals', 'body_fat_pct', 'Target Body Fat'),  unit: '%',     isWellness: true },
-    { id: 'muscle_mass_kg',     label: tr($_, 'wellness_goals', 'muscle_mass_kg', 'Target Muscle Mass'), unit: 'kg', isWellness: true },
+    { id: 'steps',              label: tr('wellness_goals', 'steps', 'Daily Steps', $locale),             unit: 'steps', isWellness: true },
+    { id: 'active_minutes',     label: tr( 'wellness_goals', 'active_minutes', 'Active Minutes'), unit: 'min',   isWellness: true },
+    { id: 'floors',             label: tr( 'wellness_goals', 'floors', 'Floors Climbed'),         unit: 'floors',isWellness: true },
+    { id: 'calories_out',       label: tr( 'wellness_goals', 'calories_out', 'Calories Burned'),   unit: 'kcal',  isWellness: true },
+    { id: 'sleep_duration_min', label: tr( 'wellness_goals', 'sleep_duration_min', 'Sleep Duration'), unit: 'min', isWellness: true },
+    { id: 'sleep_efficiency',   label: tr( 'wellness_goals', 'sleep_efficiency', 'Sleep Efficiency'), unit: '%', isWellness: true },
+    { id: 'hrv_daily_rmssd',    label: tr( 'wellness_goals', 'hrv_daily_rmssd', 'HRV (RMSSD)'),   unit: 'ms',    isWellness: true },
+    { id: 'weight_kg',          label: tr( 'wellness_goals', 'weight_kg', 'Target Weight'),       unit: 'kg',    isWellness: true },
+    { id: 'body_fat_pct',       label: tr( 'wellness_goals', 'body_fat_pct', 'Target Body Fat'),  unit: '%',     isWellness: true },
+    { id: 'muscle_mass_kg',     label: tr( 'wellness_goals', 'muscle_mass_kg', 'Target Muscle Mass'), unit: 'kg', isWellness: true },
   ];
 
   // All fields for goal-setting: all body stats + all nutrients + wellness if enabled

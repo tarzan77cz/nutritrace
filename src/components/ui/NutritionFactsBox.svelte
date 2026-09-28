@@ -151,9 +151,9 @@
         {#if nut.id === 'added-sugars'}
           <!-- FDA format: "Includes <qty> Added Sugars". Qty is
                embedded between "Includes" and the label. -->
-          <span class="row-name">{$_('nutrition_facts.includes', { values: { amount: fmt(v, nut.unit), label: tr($_, 'nutriments', nut.id, nut.label) } })}</span>
+          <span class="row-name">{$_('nutrition_facts.includes', { values: { amount: fmt(v, nut.unit), label: tr( 'nutriments', nut.id, nut.label) } })}</span>
         {:else}
-          <span class="row-name">{tr($_, 'nutriments', nut.id, nut.label)}</span>
+          <span class="row-name">{tr( 'nutriments', nut.id, nut.label)}</span>
           <span class="row-value">{fmt(v, nut.unit)}</span>
         {/if}
         {#if derived}
@@ -172,7 +172,7 @@
       {@const dv = dvPercent(nut, v)}
       <div class="row vmin" class:no-bottom={i === vitMinRows.length - 1}>
         <span class="row-label">
-          <span class="row-name">{tr($_, 'nutriments', nut.id, nut.label)}</span>
+          <span class="row-name">{tr( 'nutriments', nut.id, nut.label)}</span>
           <span class="row-value">{fmt(v, nut.unit)}</span>
         </span>
         <span class="row-dv">{dv != null ? `${dv}%` : ''}</span>
