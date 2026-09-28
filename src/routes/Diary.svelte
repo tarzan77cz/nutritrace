@@ -4,6 +4,7 @@
   import { fold } from '../lib/fold.js';
   import { push } from 'svelte-spa-router';
   import { _ } from 'svelte-i18n';
+  import { tr } from '../lib/i18n-label.js';
   import DatePicker from '../components/ui/DatePicker.svelte';
   import DateInput  from '../components/ui/DateInput.svelte';
   import { resolveAssetUrl, isNative, getServerUrl } from '../lib/platform.js';
@@ -41,7 +42,7 @@
     buildDiaryWritePayload,
     _newUuid as _diaryUuid
   } from '../stores/diary.js';
-  import { mealNames, goals, energyUnit, weightUnit, lengthUnit, navStyle,
+  import { mealNames, goals, energyUnit, weightUnit, lengthUnit, navStyle, language,
            diaryShowBrands, diaryShowThumbnails,
            diaryShowTimestamps, diaryShowMacroSummary, diaryPromptQuantity,
            diaryShowPortionSize, diaryShowNotes, diaryShowNutritionBar, diaryTotalsMode, macroLegendMode, distUnit,
@@ -807,9 +808,9 @@
     const dt = new Date(d + 'T12:00:00');
     const today = localDateStr();
     const yest  = localDateStr(new Date(Date.now() - 86400000));
-    if (d === today) return 'Today';
-    if (d === yest)  return 'Yesterday';
-    return dt.toLocaleDateString(undefined, { weekday:'short', month:'short', day:'numeric' });
+    if (d === today) return $_('diary.day_complete.status.today');
+    if (d === yest)  return $_('diary.day_complete.status.yesterday');
+    return dt.toLocaleDateString($language || undefined, { weekday:'short', month:'short', day:'numeric' });
   }
 
   function formatDateSub(d, fmt) {
@@ -1222,7 +1223,7 @@
           dispTgt = tgt != null ? Nutrition.kcalToKj(tgt) : tgt;
           dispUnit = 'kJ';
         }
-        return { ...n, cur: dispCur, rem, tgt: dispTgt, pct, over, unit: dispUnit };
+        return { ...n, label: tr($_, 'nutriments', n.id, n.label), cur: dispCur, rem, tgt: dispTgt, pct, over, unit: dispUnit };
       });
   })();
 
@@ -2264,7 +2265,7 @@
                 <div class="mmb-c" style="width:{mt.c}%" title="Carbs {mt.c}%"></div>
                 <div class="mmb-f" style="width:{mt.f}%" title="Fat {mt.f}%"></div>
               </div>
-              <span class="meal-macro-text text-3 text-sm"><span style="color:var(--macro-protein)">{mt.p}% P</span> · <span style="color:var(--macro-carbs)">{mt.c}% C</span> · <span style="color:var(--macro-fat)">{mt.f}% F</span> · <span style="color:var(--macro-calories)">{_mtEnergy.value.toLocaleString()} {_mtEnergy.unit}</span></span>
+              <span class="meal-macro-text text-3 text-sm"><span style="color:var(--macro-protein)">{mt.p}% {$_('diary.macro_letter.p')}</span> · <span style="color:var(--macro-carbs)">{mt.c}% {$_('diary.macro_letter.c')}</span> · <span style="color:var(--macro-fat)">{mt.f}% {$_('diary.macro_letter.f')}</span> · <span style="color:var(--macro-calories)">{_mtEnergy.value.toLocaleString()} {_mtEnergy.unit}</span></span>
             </button>
           {/if}
         {/if}
@@ -2484,7 +2485,7 @@
   <!-- Text summary row — taps to expand/collapse -->
   <button class="dbb-summary-row" on:click={() => barExpanded = !barExpanded}
     aria-label="{barExpanded ? 'Collapse' : 'Expand'} nutrition panel">
-    <span class="dbb-summary-text"><span style="color:var(--macro-protein)">{_mp.protein}% P</span> · <span style="color:var(--macro-carbs)">{_mp.carbs}% C</span> · <span style="color:var(--macro-fat)">{_mp.fat}% F</span> · <span style="color:var(--macro-calories)">{_sumEnergy.value.toLocaleString()} {_sumEnergy.unit}</span>{#if _waterShowInDiary} · <span style="color:var(--water-blue)"><span class="material-symbols-rounded" style="font-size:14px;vertical-align:middle">water_drop</span> {_waterDisplay(_waterTotal)}</span>{/if}</span>
+    <span class="dbb-summary-text"><span style="color:var(--macro-protein)">{_mp.protein}% {$_('diary.macro_letter.p')}</span> · <span style="color:var(--macro-carbs)">{_mp.carbs}% {$_('diary.macro_letter.c')}</span> · <span style="color:var(--macro-fat)">{_mp.fat}% {$_('diary.macro_letter.f')}</span> · <span style="color:var(--macro-calories)">{_sumEnergy.value.toLocaleString()} {_sumEnergy.unit}</span>{#if _waterShowInDiary} · <span style="color:var(--water-blue)"><span class="material-symbols-rounded" style="font-size:14px;vertical-align:middle">water_drop</span> {_waterDisplay(_waterTotal)}</span>{/if}</span>
     <span class="dbb-chevron material-symbols-rounded">{barExpanded ? 'expand_more' : 'expand_less'}</span>
   </button>
 
@@ -2505,25 +2506,25 @@
           {#if _totalsMode === 'remaining'}
             {@const _remEnergy = Nutrition.displayEnergy(caloriesGoalAdjusted - Math.round($_calTween), $energyUnit)}
             <span class="dbb-num">{_remEnergy.value.toLocaleString()}</span>
-            <span class="dbb-unit">{#if $calorieGoalMode === 'dynamic' && _dynamicCaloriesOut != null}⚡ {:else if $calorieGoalMode === 'adaptive' && _adaptiveTdee != null}📈 {/if}{#if _effectiveActive > 0}<span class="material-symbols-rounded dbb-activity-cue" title="Adjusted for activity">directions_run</span> {/if}{_remEnergy.unit} left</span>
+            <span class="dbb-unit">{#if $calorieGoalMode === 'dynamic' && _dynamicCaloriesOut != null}⚡ {:else if $calorieGoalMode === 'adaptive' && _adaptiveTdee != null}📈 {/if}{#if _effectiveActive > 0}<span class="material-symbols-rounded dbb-activity-cue" title="Adjusted for activity">directions_run</span> {/if}{_remEnergy.unit} {$_('diary.bar.left')}</span>
           {:else}
             {@const _eatEnergy = Nutrition.displayEnergy($_calTween, $energyUnit)}
             <span class="dbb-num">{_eatEnergy.value.toLocaleString()}</span>
-            <span class="dbb-unit">{#if $calorieGoalMode === 'dynamic' && _dynamicCaloriesOut != null}⚡ {:else if $calorieGoalMode === 'adaptive' && _adaptiveTdee != null}📈 {/if}{_eatEnergy.unit} eaten</span>
+            <span class="dbb-unit">{#if $calorieGoalMode === 'dynamic' && _dynamicCaloriesOut != null}⚡ {:else if $calorieGoalMode === 'adaptive' && _adaptiveTdee != null}📈 {/if}{_eatEnergy.unit} {$_('diary.bar.eaten')}</span>
           {/if}
         </div>
         <div class="dbb-macros">
           <span class="dbb-macro" style="color:var(--macro-protein)">
             {#if _totalsMode === 'remaining' && protGoal != null}{Math.round((protGoal - $_protTween)*10)/10}{:else}{Math.round($_protTween*10)/10}{/if}
-            <span class="dbb-mlabel">g Protein</span>
+            <span class="dbb-mlabel">{$_('diary.bar.g_protein')}</span>
           </span>
           <span class="dbb-macro" style="color:var(--macro-carbs)">
             {#if _totalsMode === 'remaining' && carbGoal != null}{Math.round((carbGoal - $_carbTween)*10)/10}{:else}{Math.round($_carbTween*10)/10}{/if}
-            <span class="dbb-mlabel">g Carbs</span>
+            <span class="dbb-mlabel">{$_('diary.bar.g_carbs')}</span>
           </span>
           <span class="dbb-macro" style="color:var(--macro-fat)">
             {#if _totalsMode === 'remaining' && fatGoal != null}{Math.round((fatGoal - $_fatTween)*10)/10}{:else}{Math.round($_fatTween*10)/10}{/if}
-            <span class="dbb-mlabel">g Fat</span>
+            <span class="dbb-mlabel">{$_('diary.bar.g_fat')}</span>
           </span>
         </div>
       </div>
@@ -2545,7 +2546,7 @@
             </div>
             <span class="dbb-water-text">
               {#if _totalsMode === 'remaining'}
-                {_waterDisplay(Math.max(0, _waterGoalMl - _waterTotal))} left
+                {_waterDisplay(Math.max(0, _waterGoalMl - _waterTotal))} {$_('diary.bar.left')}
               {:else}
                 {_waterDisplay(_waterTotal)}
               {/if}
@@ -3139,7 +3140,7 @@
             <div class="ns-row ns-row-clickable" role="button" tabindex="0"
                  on:click={() => _nsToggle(n.id)}
                  on:keydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); _nsToggle(n.id); } }}>
-              <span>{n.label}</span>
+              <span>{tr($_, 'nutriments', n.id, n.label)}</span>
               <span class="ns-row-right">
                 <span class="font-medium">{(Math.round((totals[n.id]||0)*10)/10).toLocaleString()} {n.unit}</span>
                 <span class="material-symbols-rounded ns-chev" class:open={isOpen}>chevron_right</span>
@@ -3212,7 +3213,7 @@
     <div class="ns-rows">
       {#each NUTRIMENTS.filter(n => ($diaryShowAllNutrients ? true : n.default) && (_mealTotals[n.id] || 0) > 0) as n}
         <div class="ns-row">
-          <span>{n.label}</span>
+          <span>{tr($_, 'nutriments', n.id, n.label)}</span>
           <span class="font-medium">{(Math.round((_mealTotals[n.id]||0)*10)/10).toLocaleString()} {n.unit}</span>
         </div>
       {/each}

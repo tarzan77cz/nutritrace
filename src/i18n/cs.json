@@ -112,8 +112,14 @@
       "circumference": "Obvod",
       "distance": "Vzdálenost",
       "temperature": "Teplota",
-      "time_12h": "12hodinový (AM/PM)",
-      "time_24h": "24hodinový"
+      "time_12h": "12 hodin (AM/PM)",
+      "time_24h": "24 hodin",
+      "formats_heading": "Jazyk a formáty",
+      "formats_sub": "Jazyk rozhraní a jak se ukazují data a časy.",
+      "units_heading": "Jednotky",
+      "units_sub": "Jednotky platí všude, kde se hodnota ukazuje.",
+      "energy_kcal": "Kalorie (kcal)",
+      "energy_kj": "Kilojouly (kJ)"
     },
     "diary": {
       "section": "Deník",
@@ -760,6 +766,18 @@
         "name_required": "Název je povinný",
         "kcal_required": "Kalorie jsou povinné"
       }
+    },
+    "macro_letter": {
+      "p": "B",
+      "c": "S",
+      "f": "T"
+    },
+    "bar": {
+      "eaten": "snědeno",
+      "left": "zbývá",
+      "g_protein": "g bílkoviny",
+      "g_carbs": "g sacharidy",
+      "g_fat": "g tuky"
     }
   },
   "foods": {
@@ -853,6 +871,19 @@
       "meal_partly_added": "Některé ingredience se nepodařilo přidat: {names}",
       "meal_none_added": "Tento pokrm se nepodařilo přidat. Zkontroluj připojení a zkus to znovu.",
       "meal_stale_ingredients": "Přidáno do deníku. Tyto ingredience už v tvých jídlech nejsou: {names}. Uprav pokrm, ať to sedí."
+    },
+    "tabs": {
+      "foods": "Jídla",
+      "meals": "Pokrmy",
+      "recipes": "Recepty"
+    },
+    "empty": {
+      "no_foods": "Zatím žádná jídla",
+      "no_meals": "Zatím žádné pokrmy",
+      "no_recipes": "Zatím žádné recepty",
+      "add_food": "Přidat jídlo",
+      "add_meal": "Přidat pokrm",
+      "add_recipe": "Přidat recept"
     }
   },
   "trace": {
@@ -963,6 +994,18 @@
       "value_label_day": "{day} ({unit})",
       "remove_goal": "Odebrat cíl",
       "water_sheet_label": "Cíl ({unit})"
+    },
+    "tabs": {
+      "yours": "Tvoje cíle",
+      "all": "Všechna pole",
+      "templates": "Šablony"
+    },
+    "macros": {
+      "title": "Makra",
+      "balanced": "Vyvážené 30/40/30",
+      "keto": "Keto 25/5/70",
+      "high_protein": "Víc bílkovin 40/30/30",
+      "currently": "Teď: {name}"
     }
   },
   "goals": {
@@ -1162,7 +1205,8 @@
   "nutrition_facts": {
     "title": "Nutriční hodnoty",
     "serving_size": "Velikost porce",
-    "amount_per": "Množství na porci"
+    "amount_per": "Množství na porci",
+    "includes": "z toho {amount} {label}"
   },
   "fasting_insights": {
     "title": "Půst",
@@ -2279,7 +2323,17 @@
       "hint_wellness": "Připoj fitness tracker v Nastavení → Pohoda",
       "hint_other": "Nic nenalezeno — zkus jiné období"
     },
-    "history_heading": "Historie"
+    "history_heading": "Historie",
+    "chips": {
+      "w1": "1T",
+      "w2": "2T",
+      "m1": "1M",
+      "m3": "3M",
+      "m6": "6M",
+      "y1": "1R",
+      "all": "Vše",
+      "custom": "Vlastní"
+    }
   },
   "accept_invite": {
     "title": "Vytvořit účet",
@@ -2300,5 +2354,67 @@
       "username_required": "Uživatelské jméno je povinné",
       "failed": "Účet se nepodařilo vytvořit"
     }
+  },
+  "nutriments": {
+    "calories": "Energie",
+    "kilojoules": "Kilojouly",
+    "fat": "Tuky",
+    "saturated-fat": "z toho nasycené mastné kyseliny",
+    "trans-fat": "Trans mastné kyseliny",
+    "polyunsaturated-fat": "Polynenasycené mastné kyseliny",
+    "monounsaturated-fat": "Mononenasycené mastné kyseliny",
+    "cholesterol": "Cholesterol",
+    "sodium": "Sodík",
+    "salt": "Sůl",
+    "carbohydrates": "Sacharidy",
+    "fiber": "Vláknina",
+    "sugars": "z toho cukry",
+    "added-sugars": "z toho přidané cukry",
+    "proteins": "Bílkoviny",
+    "vitamin-d": "Vitamin D",
+    "calcium": "Vápník",
+    "iron": "Železo",
+    "potassium": "Draslík",
+    "vitamin-a": "Vitamin A",
+    "vitamin-c": "Vitamin C",
+    "vitamin-e": "Vitamin E",
+    "vitamin-k": "Vitamin K",
+    "b1": "Vitamin B1",
+    "b2": "Vitamin B2",
+    "b3": "Vitamin B3",
+    "b6": "Vitamin B6",
+    "b9": "Folát (B9)",
+    "b12": "Vitamin B12",
+    "magnesium": "Hořčík",
+    "zinc": "Zinek",
+    "phosphorus": "Fosfor",
+    "caffeine": "Kofein",
+    "alcohol": "Alkohol"
+  },
+  "body_metrics": {
+    "weight": "Hmotnost",
+    "neck": "Krk",
+    "waist": "Pas",
+    "hips": "Boky",
+    "chest": "Hrudník",
+    "thighs": "Stehna",
+    "biceps": "Biceps",
+    "calves": "Lýtka",
+    "body_fat": "Tělesný tuk",
+    "body_water": "Tělní voda",
+    "water": "Voda",
+    "muscle": "Svalová hmota"
+  },
+  "wellness_goals": {
+    "steps": "Denní kroky",
+    "active_minutes": "Aktivní minuty",
+    "floors": "Vystoupaná patra",
+    "calories_out": "Spálené kalorie",
+    "sleep_duration_min": "Délka spánku",
+    "sleep_efficiency": "Efektivita spánku",
+    "hrv_daily_rmssd": "HRV (RMSSD)",
+    "weight_kg": "Cílová hmotnost",
+    "body_fat_pct": "Cílový tělesný tuk",
+    "muscle_mass_kg": "Cílová svalová hmota"
   }
 }

@@ -113,7 +113,13 @@
       "distance": "Distance",
       "temperature": "Temperature",
       "time_12h": "12-hour (AM/PM)",
-      "time_24h": "24-hour"
+      "time_24h": "24-hour",
+      "formats_heading": "Language & Formats",
+      "formats_sub": "Interface language and how dates and times are shown.",
+      "units_heading": "Units",
+      "units_sub": "Unit choices apply everywhere the value shows.",
+      "energy_kcal": "Calories (kcal)",
+      "energy_kj": "Kilojoules (kJ)"
     },
     "diary": {
       "section": "Diary",
@@ -760,6 +766,18 @@
         "name_required": "Name required",
         "kcal_required": "Calories required"
       }
+    },
+    "macro_letter": {
+      "p": "P",
+      "c": "C",
+      "f": "F"
+    },
+    "bar": {
+      "eaten": "eaten",
+      "left": "left",
+      "g_protein": "g Protein",
+      "g_carbs": "g Carbs",
+      "g_fat": "g Fat"
     }
   },
   "foods": {
@@ -853,6 +871,19 @@
       "meal_partly_added": "Some ingredients could not be added: {names}",
       "meal_none_added": "Could not add this meal. Check your connection and try again.",
       "meal_stale_ingredients": "Added to diary. These ingredients are no longer in your foods: {names}. Edit the meal to fix them."
+    },
+    "tabs": {
+      "foods": "Foods",
+      "meals": "Meals",
+      "recipes": "Recipes"
+    },
+    "empty": {
+      "no_foods": "No foods yet",
+      "no_meals": "No meals yet",
+      "no_recipes": "No recipes yet",
+      "add_food": "Add Food",
+      "add_meal": "Add Meal",
+      "add_recipe": "Add Recipe"
     }
   },
   "trace": {
@@ -963,6 +994,18 @@
       "value_label_day": "{day} ({unit})",
       "remove_goal": "Remove Goal",
       "water_sheet_label": "Goal ({unit})"
+    },
+    "tabs": {
+      "yours": "Your Goals",
+      "all": "All Fields",
+      "templates": "Templates"
+    },
+    "macros": {
+      "title": "Macros",
+      "balanced": "Balanced 30/40/30",
+      "keto": "Keto 25/5/70",
+      "high_protein": "High-Protein 40/30/30",
+      "currently": "Currently: {name}"
     }
   },
   "goals": {
@@ -1162,7 +1205,8 @@
   "nutrition_facts": {
     "title": "Nutrition Facts",
     "serving_size": "Serving Size",
-    "amount_per": "Amount Per Serving"
+    "amount_per": "Amount Per Serving",
+    "includes": "Includes {amount} {label}"
   },
   "fasting_insights": {
     "title": "Fasting",
@@ -2279,7 +2323,17 @@
       "hint_wellness": "Connect a fitness tracker in Settings → Wellness",
       "hint_other": "No entries found — try a different date range"
     },
-    "history_heading": "History"
+    "history_heading": "History",
+    "chips": {
+      "w1": "1W",
+      "w2": "2W",
+      "m1": "1M",
+      "m3": "3M",
+      "m6": "6M",
+      "y1": "1Y",
+      "all": "All",
+      "custom": "Custom"
+    }
   },
   "accept_invite": {
     "title": "Create Account",
@@ -2300,5 +2354,67 @@
       "username_required": "Username is required",
       "failed": "Failed to create account"
     }
+  },
+  "nutriments": {
+    "calories": "Calories",
+    "kilojoules": "Kilojoules",
+    "fat": "Fat",
+    "saturated-fat": "Saturated Fat",
+    "trans-fat": "Trans Fat",
+    "polyunsaturated-fat": "Polyunsaturated Fat",
+    "monounsaturated-fat": "Monounsaturated Fat",
+    "cholesterol": "Cholesterol",
+    "sodium": "Sodium",
+    "salt": "Salt",
+    "carbohydrates": "Carbs",
+    "fiber": "Fiber",
+    "sugars": "Sugars",
+    "added-sugars": "Added Sugars",
+    "proteins": "Protein",
+    "vitamin-d": "Vitamin D",
+    "calcium": "Calcium",
+    "iron": "Iron",
+    "potassium": "Potassium",
+    "vitamin-a": "Vitamin A",
+    "vitamin-c": "Vitamin C",
+    "vitamin-e": "Vitamin E",
+    "vitamin-k": "Vitamin K",
+    "b1": "Vitamin B1",
+    "b2": "Vitamin B2",
+    "b3": "Vitamin B3",
+    "b6": "Vitamin B6",
+    "b9": "Folate (B9)",
+    "b12": "Vitamin B12",
+    "magnesium": "Magnesium",
+    "zinc": "Zinc",
+    "phosphorus": "Phosphorus",
+    "caffeine": "Caffeine",
+    "alcohol": "Alcohol"
+  },
+  "body_metrics": {
+    "weight": "Weight",
+    "neck": "Neck",
+    "waist": "Waist",
+    "hips": "Hips",
+    "chest": "Chest",
+    "thighs": "Thighs",
+    "biceps": "Biceps",
+    "calves": "Calves",
+    "body_fat": "Body Fat",
+    "body_water": "Body Water",
+    "water": "Water",
+    "muscle": "Muscle Mass"
+  },
+  "wellness_goals": {
+    "steps": "Daily Steps",
+    "active_minutes": "Active Minutes",
+    "floors": "Floors Climbed",
+    "calories_out": "Calories Burned",
+    "sleep_duration_min": "Sleep Duration",
+    "sleep_efficiency": "Sleep Efficiency",
+    "hrv_daily_rmssd": "HRV (RMSSD)",
+    "weight_kg": "Target Weight",
+    "body_fat_pct": "Target Body Fat",
+    "muscle_mass_kg": "Target Muscle Mass"
   }
 }
