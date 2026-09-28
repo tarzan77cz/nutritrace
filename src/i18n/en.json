@@ -1316,6 +1316,25 @@
     "body_stats": "Body Stats",
     "nutrition_summary": "Nutrition Summary"
   },
+  "diary_rail": {
+    "overview": "Overview",
+    "of_goal": "of {value}",
+    "custom": "+ Custom",
+    "weight_empty": "Weight not logged",
+    "log": "Log",
+    "no_measurements": "No measurements logged today",
+    "log_stats": "Log Stats",
+    "edit_weight": "Edit today's weight",
+    "open_summary": "Open full nutrition summary",
+    "view_trend": "View trend",
+    "toggle_macros": "Toggle percent / grams",
+    "open_water": "Open water sheet",
+    "open_stats": "Open Body Stats sheet",
+    "remove_entry": "Remove this entry",
+    "hide_panel": "Hide widgets",
+    "pin_panel": "Pin widgets",
+    "close": "Close"
+  },
   "wizard_deep": {
     "off_user_ph": "Username (optional)",
     "off_pass_ph": "Password (optional)",

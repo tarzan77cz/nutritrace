@@ -1736,15 +1736,15 @@
        "put the hide button inside DaySummary's header" approach
        so DaySummary can go back to just %/g toggle + open_in_full. -->
   <header class="rail-title">
-    <span class="rail-title-text">Overview</span>
+    <span class="rail-title-text">{$_('diary_rail.overview')}</span>
     <div class="rail-title-actions">
       {#if _railMode === 'pinned'}
         <button
           type="button"
           class="rail-ctrl-btn"
           on:click={railHide}
-          aria-label="Hide widget panel"
-          title="Hide widgets (edge tab reopens)"
+          aria-label={$_('diary_rail.hide_panel')}
+          title={$_('diary_rail.hide_panel')}
         >
           <span class="material-symbols-rounded">right_panel_close</span>
         </button>
@@ -1753,8 +1753,8 @@
           type="button"
           class="rail-ctrl-btn"
           on:click={railPin}
-          aria-label="Pin widget panel"
-          title="Pin widgets"
+          aria-label={$_('diary_rail.pin_panel')}
+          title={$_('diary_rail.pin_panel')}
         >
           <span class="material-symbols-rounded">push_pin</span>
         </button>
@@ -1762,8 +1762,8 @@
           type="button"
           class="rail-ctrl-btn"
           on:click={() => _railOverlay = false}
-          aria-label="Close widget panel"
-          title="Close"
+          aria-label={$_('diary_rail.close')}
+          title={$_('diary_rail.close')}
         >
           <span class="material-symbols-rounded">close</span>
         </button>

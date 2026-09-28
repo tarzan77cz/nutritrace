@@ -1316,6 +1316,25 @@
     "body_stats": "Tělesné údaje",
     "nutrition_summary": "Souhrn výživy"
   },
+  "diary_rail": {
+    "overview": "Přehled",
+    "of_goal": "z {value}",
+    "custom": "+ Vlastní",
+    "weight_empty": "Hmotnost není zapsaná",
+    "log": "Zapsat",
+    "no_measurements": "Dnes nemáš žádné míry",
+    "log_stats": "Zapsat údaje",
+    "edit_weight": "Upravit dnešní hmotnost",
+    "open_summary": "Otevřít celý výživový přehled",
+    "view_trend": "Zobrazit trend",
+    "toggle_macros": "Přepnout procenta a gramy",
+    "open_water": "Otevřít vodu",
+    "open_stats": "Otevřít tělesné údaje",
+    "remove_entry": "Odebrat záznam",
+    "hide_panel": "Skrýt widgety",
+    "pin_panel": "Připnout widgety",
+    "close": "Zavřít"
+  },
   "wizard_deep": {
     "off_user_ph": "Uživatelské jméno (volitelné)",
     "off_pass_ph": "Heslo (volitelné)",
