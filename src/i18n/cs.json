@@ -2,13 +2,2303 @@
   "nav": {
     "diary": "Deník",
     "foods": "Jídla",
+    "wellness": "Pohoda",
     "statistics": "Statistiky",
     "goals": "Cíle",
     "settings": "Nastavení"
   },
+  "routes": {
+    "diary": {
+      "title": "Deník"
+    },
+    "foods": {
+      "title": "Jídla"
+    },
+    "wellness": {
+      "title": "Pohoda"
+    },
+    "statistics": {
+      "title": "Statistiky"
+    },
+    "goals": {
+      "title": "Cíle"
+    },
+    "settings": {
+      "title": "Nastavení"
+    }
+  },
   "common": {
-    "sign_out": "Odhlásit",
+    "sign_out": "Odhlásit se",
+    "log_out": "Odhlásit se",
+    "signing_out": "Odhlašuji…",
     "experimental": "Experimentální",
-    "hide": "Skrýt"
+    "hide": "Skrýt",
+    "save": "Uložit",
+    "saving": "Ukládám…",
+    "cancel": "Zrušit",
+    "back": "Zpět",
+    "close": "Zavřít",
+    "delete": "Smazat",
+    "signed_in": "Přihlášen",
+    "signed_out": "Odhlášen",
+    "linked": "Propojeno",
+    "unlinked": "Odpojeno",
+    "admin": "admin",
+    "errors": {
+      "cant_reach_server": "Nepodařilo se spojit se serverem",
+      "failed": "Selhalo",
+      "unlink_failed": "Nepodařilo se odpojit",
+      "save_failed": "Uložení selhalo",
+      "delete_failed": "Smazání selhalo",
+      "name_required": "Jméno je povinné",
+      "network_error_upload": "Chyba sítě při nahrávání",
+      "voice_unsupported": "Hlasový vstup v tomto prohlížeči nefunguje",
+      "cant_start_mic": "Nepodařilo se spustit mikrofon"
+    }
+  },
+  "sync": {
+    "synced": "Synchronizováno",
+    "sync_offline": "Offline",
+    "refused": "Tvůj server nepřijal to, co čeká: {reason}. Nechávám to tady a zkusím to znovu.",
+    "sign_out_waiting_title": "Změny ještě čekají",
+    "sign_out_waiting": "{count, plural, one {# změna ještě nedorazila na tvůj server. Odhlášení teď ji zahodí. Připoj se a zkus to znovu, ať ji zachováš.} few {# změny ještě nedorazily na tvůj server. Odhlášení teď je zahodí. Připoj se a zkus to znovu, ať je zachováš.} other {# změn ještě nedorazilo na tvůj server. Odhlášení teď je zahodí. Připoj se a zkus to znovu, ať je zachováš.}}",
+    "sign_out_anyway": "Přesto odhlásit",
+    "pending_web": "{count, plural, =0 {Offline. Tvůj deník pořád funguje a ukládá se tady.} one {Offline. # den čeká na odeslání.} few {Offline. # dny čekají na odeslání.} other {Offline. # dnů čeká na odeslání.}}",
+    "sync_failing": "Server nejde dosáhnout",
+    "not_synced": "Ještě nesynchronizováno",
+    "sync_now": "Synchronizovat teď",
+    "syncing": "Synchronizuji…",
+    "retry": "Zkusit znovu",
+    "retrying": "Zkouším znovu…",
+    "dismiss_message": "Skrýt zprávu o synchronizaci",
+    "error_title": "Synchronizace selhala",
+    "connected": "Připojeno",
+    "server_unavailable": "Server nedostupný",
+    "last_synced": "Naposledy synchronizováno",
+    "time": {
+      "never": "nikdy",
+      "just_now": "právě teď",
+      "seconds_ago": "před {count} s",
+      "minutes_ago": "před {count} m",
+      "hours_ago": "před {count} h",
+      "days_ago": "před {count} d"
+    },
+    "connection": {
+      "server_fallback": "server",
+      "no_network_title": "Bez síťového připojení",
+      "cant_reach_title": "Nejde dosáhnout {host}",
+      "reconnect": "Připoj se znovu k internetu.",
+      "server_error": "Server vrátil HTTP {status}. Zkus to za chvíli znovu.",
+      "mobile_data": "Jsi připojený přes mobilní data. Tento server může vyžadovat domácí Wi-Fi nebo VPN.",
+      "check_connection": "Zkontroluj Wi-Fi, VPN nebo server.",
+      "saved_locally": "Tvoje změny jsou uložené lokálně a synchronizují se automaticky."
+    }
+  },
+  "settings": {
+    "appearance": {
+      "section": "Vzhled",
+      "theme": "Motiv",
+      "accent_color": "Barva zvýraznění",
+      "navigation_style": "Styl navigace"
+    },
+    "regional": {
+      "section": "Region a jednotky",
+      "language": "Jazyk",
+      "date_format": "Formát data",
+      "time_format": "Formát času",
+      "energy": "Energie",
+      "weight": "Hmotnost",
+      "height": "Výška",
+      "circumference": "Obvod",
+      "distance": "Vzdálenost",
+      "temperature": "Teplota",
+      "time_12h": "12hodinový (AM/PM)",
+      "time_24h": "24hodinový"
+    },
+    "diary": {
+      "section": "Deník",
+      "show_quick_calories": "Zobrazit tlačítko rychlých kalorií",
+      "show_quick_calories_desc": "Přidá ikonu blesku u každého jídla pro rychlé zadání jen kalorií (bez jídla a porce). Hodí se, když kalorie znáš, ale nechceš jídlo modelovat, nebo když přicházíš z rychlých kalorií ve stylu Fitbit.",
+      "quick_calories_display": "Zobrazení rychlých kalorií",
+      "quick_calories_display_desc": "Jak se v deníku zobrazí více záznamů rychlých kalorií ve stejném jídle. Sečtené je sloučí do jednoho řádku; Oddělené ukáže každý záznam zvlášť.",
+      "quick_calories_summed": "Sečtené",
+      "quick_calories_separate": "Oddělené"
+    },
+    "water": {
+      "section": "Voda"
+    },
+    "foods": {
+      "section": "Jídla"
+    },
+    "categories": {
+      "section": "Kategorie"
+    },
+    "nutrients": {
+      "section": "Živiny"
+    },
+    "goals": {
+      "section": "Kalorické cíle"
+    },
+    "body_stats": {
+      "section": "Tělesné údaje"
+    },
+    "statistics": {
+      "section": "Statistiky",
+      "categories": "Kategorie",
+      "categories_help": "Přetažením změníš pořadí chipů metrik na stránce Statistiky. Vypni kategorie, na které se nikdy nedíváš."
+    },
+    "connected_services": {
+      "section": "Zdroje jídel",
+      "off": {
+        "header": "Open Food Facts",
+        "enable": "Zapnout Open Food Facts",
+        "enable_desc": "Při přidávání jídel hledá v globální davové databázi. Pro hledání účet nepotřebuješ; ten je nutný jen k nahrání úprav.",
+        "search_language": "Jazyk vyhledávání",
+        "search_country": "Země vyhledávání",
+        "upload_country": "Země nahrávání",
+        "upload_country_auto": "Auto",
+        "import_portion": "Importovat porci jako",
+        "import_portion_100g": "Na 100 g",
+        "import_portion_serving": "Na porci",
+        "import_portion_desc": "Když má naskenovaný produkt údaje o porci, předvyplní jídlo hodnotami na porci místo na 100 g. Produkty bez údajů o porci na OFF vždy spadnou na 100 g.",
+        "account_username": "Uživatelské jméno účtu",
+        "account_password": "Heslo účtu",
+        "account_note": "Volitelné, potřeba jen k nahrání úprav.",
+        "account_create_link": "Vytvořit účet OFF →",
+        "username_placeholder": "Uživatelské jméno účtu OFF",
+        "password_placeholder": "Heslo účtu OFF",
+        "auto_refresh": "Automatická obnova",
+        "auto_refresh_desc": "Jak často znovu stáhnout zrcadlo z Open Food Facts. Každá obnova stáhne celý snímek (~4 GB).",
+        "auto_refresh_off": "Vypnuto",
+        "auto_refresh_daily": "Denně",
+        "auto_refresh_weekly": "Týdně",
+        "auto_refresh_monthly": "Měsíčně"
+      }
+    },
+    "ai": {
+      "section": "AI asistent"
+    },
+    "notifications": {
+      "section": "Oznámení"
+    },
+    "wellness": {
+      "section": "Pohoda"
+    },
+    "sharing": {
+      "section": "Sdílení jídel"
+    },
+    "profile_hero": {
+      "label_fallback": "Můj profil",
+      "subtitle_empty": "Klepni a přidej jméno a fotku"
+    },
+    "authentication": {
+      "section": "Přihlášení"
+    },
+    "users": {
+      "section": "Uživatelé",
+      "users_heading": "Uživatelé",
+      "add_user": "+ Přidat uživatele",
+      "username": "Uživatelské jméno",
+      "username_required": "Uživatelské jméno *",
+      "full_name": "Celé jméno (volitelné)",
+      "password_required": "Heslo *",
+      "confirm_required": "Potvrzení *",
+      "role": "Role",
+      "role_admin": "admin",
+      "role_user": "user",
+      "role_self_suffix": "(ty)",
+      "create": "Vytvořit",
+      "creating": "Vytvářím…",
+      "delete_user_title": "Smazat {name}?",
+      "delete_user_message": "Všechna data tohoto uživatele — jídla, pokrmy, záznamy v deníku, nastavení — budou odstraněna. Tohle nejde vrátit.",
+      "delete": "Smazat",
+      "promote_title": "Povýšit {name}?",
+      "promote_message": "Bude moct spravovat uživatele, sdílení, e-mail a poskytovatele OIDC.",
+      "promote_confirm": "Povýšit",
+      "demote_title": "Snížit roli {name}?",
+      "demote_message": "Ztratí admin přístup. Později ho můžeš zase povýšit.",
+      "demote_confirm": "Snížit roli",
+      "reset_password": "Resetovat heslo",
+      "reset_password_prompt": "Nastav nové heslo pro {name}\n\n(Musí mít aspoň 8 znaků, velké a malé písmeno, číslici a speciální znak.)",
+      "invite_user": "Pozvat uživatele",
+      "invite_user_explainer": "Pošli odkaz k registraci, ať si uživatel zvolí vlastní heslo. Zadej e-mail pro přímé odeslání (vyžaduje SMTP), nebo nech prázdné a vygeneruj odkaz ke zkopírování.",
+      "email_optional": "E-mail (volitelné)",
+      "send_invite": "Poslat pozvánku",
+      "generate_link": "Vygenerovat odkaz",
+      "invite_sent": "Pozvánka odeslána",
+      "invite_sent_to": "Pozvánka odeslána na {email}",
+      "user_fallback": "uživatel",
+      "share_link_intro": "Sdílej tento odkaz:",
+      "copy": "Kopírovat",
+      "copy_link": "Kopírovat odkaz",
+      "add_user_show": "Přidat uživatele ručně",
+      "add_user_hide": "Skrýt ruční přidání",
+      "add_user_explainer": "Uživatelské jméno a heslo nastavíš ty a pak je uživateli předáš. Hodí se, když není SMTP, nebo pro offline setup.",
+      "create_directly": "Vytvořit uživatele",
+      "session_duration": "Délka relace",
+      "session_never": "Nikdy nevyprší",
+      "session_8h": "8 hodin",
+      "session_1d": "1 den",
+      "session_7d": "7 dní",
+      "session_30d": "30 dní",
+      "session_90d": "90 dní",
+      "session_1y": "1 rok",
+      "save": "Uložit",
+      "disable_um": "Vypnout správu uživatelů",
+      "disable_um_subtitle": "Odstraní všechny uživatelské účty a vrátí se do režimu jednoho uživatele",
+      "disable_um_title": "Vypnout správu uživatelů?",
+      "disable_um_message": "Tím se odstraní všechny uživatelské účty a jejich data nepůjde obnovit. Aplikace se vrátí do režimu jednoho uživatele.",
+      "disable_um_confirm": "Vypnout a smazat vše",
+      "enable_um": "Zapnout správu uživatelů",
+      "enable_um_subtitle": "Přidej více uživatelských účtů s oddělenými daty a nastavením",
+      "create_admin_account": "Vytvořit admin účet",
+      "create_admin_explainer": "První účet je vždy admin. Všechna stávající jídla, pokrmy a deník na tomto serveru se mu přiřadí.",
+      "enable_create": "Zapnout a vytvořit admina",
+      "enabling": "Zapínám…",
+      "toast_user_created": "Uživatel přidán",
+      "toast_user_deleted": "Uživatel smazán",
+      "toast_password_reset": "Heslo resetováno",
+      "toast_role_changed": "{name} je teď {role}",
+      "toast_um_enabled": "Správa uživatelů zapnuta",
+      "toast_um_disabled": "Správa uživatelů vypnuta",
+      "toast_invite_sent": "Pozvánka odeslána",
+      "toast_link_copied": "Zkopírováno!",
+      "err_username_required": "Uživatelské jméno je povinné",
+      "err_passwords_mismatch": "Hesla se neshodují",
+      "err_username_password_required": "Uživatelské jméno a heslo jsou povinné",
+      "err_registration_failed": "Registrace selhala",
+      "err_failed_to_add": "Nepodařilo se přidat uživatele",
+      "err_could_not_change_role": "Nepodařilo se změnit roli",
+      "err_could_not_reset_password": "Nepodařilo se resetovat heslo",
+      "err_could_not_reach_server": "Nepodařilo se spojit se serverem",
+      "revoke_invite_title": "Zrušit pozvánku?",
+      "revoke_invite_message": "Odkaz hned přestane fungovat. Příjemce ho už potom nebude moct použít.",
+      "revoke_confirm": "Zrušit",
+      "invite_revoked": "Pozvánka zrušena",
+      "err_could_not_revoke": "Nepodařilo se zrušit pozvánku",
+      "invite_email_hint": "Zadej platný e-mail, nebo pole vymaž a vygeneruj odkaz ke sdílení.",
+      "err_invite_email": "Zadej platný e-mail, nebo nech prázdné pro odkaz ke sdílení",
+      "err_failed_create_invite": "Nepodařilo se vytvořit pozvánku",
+      "err_could_not_create_invite": "Nepodařilo se vytvořit pozvánku",
+      "pending_invites": "Čekající pozvánky",
+      "link_only": "Jen odkaz (bez e-mailu)",
+      "role_admin_display": "Admin",
+      "role_user_display": "Uživatel",
+      "expires_short": "vyprší {date}",
+      "revoke_invite_aria": "Zrušit pozvánku",
+      "strong_passwords": "Vyžadovat silná hesla",
+      "strong_passwords_desc": "Odmítne slabá hesla (skóre zxcvbn pod 3) navíc k pravidlům 8 znaků + velikost písmen + číslice + symbol. Platí pro nové registrace, pozvánky a změny hesla. Stávající hesla se znovu nekontrolují.",
+      "saved_short": "Uloženo.",
+      "session_desc": "Jak dlouho zůstanou uživatelé přihlášení. Platí pro nová přihlášení.",
+      "err_password_policy_prefix": "Nepodařilo se uložit politiku hesel: {msg}. Server možná potřebuje znovu nasadit.",
+      "err_password_policy": "Nepodařilo se uložit politiku hesel: {msg}",
+      "save_failed_status": "Uložení selhalo ({status})",
+      "network_error": "chyba sítě",
+      "hide": "Skrýt",
+      "show": "Zobrazit"
+    },
+    "email": {
+      "section": "E-mail (SMTP)"
+    },
+    "backup": {
+      "section": "Záloha a obnovení"
+    },
+    "importExport": {
+      "section": "Import a export"
+    },
+    "server": {
+      "section": "Připojení k serveru"
+    },
+    "diagnostics": {
+      "section": "Diagnostika"
+    },
+    "updates": {
+      "section": "Aktualizace"
+    },
+    "api_tokens": {
+      "section": "API tokeny"
+    },
+    "webhooks": {
+      "section": "Webhooky"
+    },
+    "about": {
+      "section": "O aplikaci"
+    }
+  },
+  "updates": {
+    "current_version": "Aktuální verze",
+    "channel": {
+      "label": "Kanál aktualizací",
+      "stable": "Stable",
+      "dev": "Dev",
+      "help": "Stable sleduje otagované releasy. Dev je průběžný vývojový build — počítej s chybami."
+    },
+    "auto_check": "Automaticky kontrolovat aktualizace",
+    "auto_check_desc": "Na pozadí hledat nové releasy.",
+    "off_resting": "Vypnuto. Tvůj server nebude kontaktovat GitHub. Zapni to, ať se dozvíš o nových funkcích, opravách a bezpečnostních aktualizacích.",
+    "off_notice_title": "Kontrola aktualizací je vypnutá",
+    "off_notice": "Nic ti neřekne o nových funkcích, opravách ani bezpečnostních aktualizacích. Zapnutí kontroly se každých pár hodin zeptá GitHubu na nejnovější release a o tobě nic neodesílá.",
+    "turn_on": "Zapnout",
+    "not_now": "Teď ne",
+    "interval": {
+      "label": "Frekvence kontroly",
+      "desc": "Jak často aplikace při otevření kontroluje nový release. Ručně vypne všechny automatické kontroly.",
+      "hourly": "Každou hodinu",
+      "every_4h": "Každé 4 hodiny",
+      "every_12h": "Každých 12 hodin",
+      "daily": "Jednou denně",
+      "manual": "Jen ručně"
+    },
+    "last_checked": "Naposledy zkontrolováno",
+    "last_checked_never": "Nikdy",
+    "check_now": "Zkontrolovat teď",
+    "checking": "Kontroluji…",
+    "check_failed": "Kontrola aktualizace selhala. Zkus to za chvíli znovu.",
+    "up_to_date": "Máš nejnovější verzi",
+    "available_headline": "Je k dispozici {version}",
+    "released": "Vydáno {when}",
+    "release_notes_heading": "Co je nového",
+    "no_release_notes": "K tomuto buildu nebyly zveřejněny poznámky k release.",
+    "view_on_github": "Zobrazit na GitHubu",
+    "download_install": "Stáhnout a nainstalovat",
+    "downloading": "Stahuji… {percent}%",
+    "install_starting": "Otevírám instalátor…",
+    "install_failed": "Instalace selhala. Zkus to znovu.",
+    "skip_this_version": "Přeskočit tuto verzi",
+    "no_apk_asset": "K tomuto release není přiložený APK soubor.",
+    "banner_cta": "Klepni a podívej se, co je nového, a nainstaluj.",
+    "banner_view": "Zobrazit",
+    "available_generic": "Je k dispozici nová verze",
+    "ready_headline": "Aktualizace je připravená",
+    "ready_cta": "Znovu načti stránku a získej nejnovější verzi.",
+    "banner_reload": "Znovu načíst",
+    "storage": {
+      "heading": "Uložené APK aktualizace",
+      "empty": "Žádné uložené APK. Úklid proběhl v pořádku.",
+      "clear_now": "Vymazat teď",
+      "clearing": "Mažu…",
+      "cleared": "Cache vymazána."
+    },
+    "server": {
+      "heading": "Server",
+      "headline": "Je k dispozici aktualizace serveru {latest}",
+      "behind_desc": "Dostupná aktualizace: {latest}",
+      "current_desc": "Máš nejnovější release",
+      "versions": "Server běží na {current}. Nejnovější release: {latest}.",
+      "available_chip": "Aktualizace k dispozici",
+      "instructions": "Pro aktualizaci serveru spusť na hostitelském stroji:",
+      "copy_command": "Kopírovat příkaz",
+      "copied": "Zkopírováno do schránky.",
+      "copy_failed": "Kopírování selhalo. Zkopíruj příkaz ručně.",
+      "view_notes": "Zobrazit poznámky k release",
+      "channel_note": "Pro přepnutí kanálu serveru změň v docker-compose.yml tag image (:latest, :1.0, :1, :dev) a znovu spusť docker-compose pull && docker-compose up -d."
+    }
+  },
+  "login": {
+    "subtitle": "Přihlas se ke svému účtu",
+    "username": "Uživatelské jméno",
+    "username_placeholder": "Zadej uživatelské jméno",
+    "password": "Heslo",
+    "password_placeholder": "Zadej heslo",
+    "sign_in": "Přihlásit se",
+    "signing_in": "Přihlašuji…",
+    "forgot_password": "Zapomenuté heslo?",
+    "locked_out": "Zamčeno?",
+    "sso_sign_in_with": "Přihlásit přes {provider}",
+    "sso_or": "nebo",
+    "no_signin_methods": "Žádné způsoby přihlášení nejsou k dispozici. Zeptej se správce.",
+    "biometric": {
+      "sign_in_button": "Přihlásit biometrikou",
+      "prompt": "Přihlásit se do NutriTrace",
+      "no_saved": "Žádné uložené přihlášení. Nejdřív se jednou přihlas heslem.",
+      "expired": "Uložené přihlášení vypršelo. Přihlas se heslem.",
+      "failed": "Biometrické přihlášení selhalo. Použij heslo."
+    },
+    "errors": {
+      "failed": "Přihlášení selhalo"
+    },
+    "recovery": {
+      "confirm": "Tím smažeš všechny uživatelské účty. Data jídel a deníku zůstanou. Pokračovat?",
+      "explainer": "Pokud jsi nikdy záměrně nenastavil uživatelské účty, můžeš správu uživatelů vypnout. <strong>Tím smažeš všechny uživatelské účty.</strong> Data jídel &amp; deníku zůstanou.",
+      "token_prompt": "Zadej <code>RECOVERY_TOKEN</code> z prostředí serveru:",
+      "token_placeholder": "Obnovovací token",
+      "action": "Vypnout správu uživatelů a resetovat",
+      "disabling": "Vypínám…",
+      "failed": "Obnova selhala",
+      "success": "Správa uživatelů vypnuta — teď jsi v režimu jednoho uživatele",
+      "done": "Správa uživatelů byla vypnuta.<br>Přesměrovávám…"
+    }
+  },
+  "forgot_password": {
+    "title": "Obnovení hesla",
+    "intro": "Zadej e-mailovou adresu a pošleme ti odkaz na obnovení hesla.",
+    "email_label": "E-mailová adresa",
+    "send_link": "Poslat odkaz",
+    "sending": "Odesílám…",
+    "back_to_signin": "Zpět k přihlášení",
+    "sent": "Pokud pro <strong>{email}</strong> účet existuje, odkaz na obnovení byl odeslán. Podívej se do schránky."
+  },
+  "reset_password": {
+    "title": "Nové heslo",
+    "verifying": "Ověřuji odkaz…",
+    "invalid_link": "Tento odkaz na obnovení je neplatný nebo vypršel.",
+    "request_new": "Požádat o nový odkaz",
+    "success": "Heslo aktualizováno. Přesměrovávám…",
+    "set_for": "Nastav nové heslo pro <strong>{username}</strong>",
+    "new_password": "Nové heslo",
+    "confirm_password": "Potvrď heslo",
+    "password_placeholder": "8+ znaků, velké, malé, číslo, symbol",
+    "submit": "Nastavit nové heslo",
+    "saving": "Ukládám…",
+    "errors": {
+      "required": "Heslo je povinné",
+      "mismatch": "Hesla se neshodují",
+      "failed": "Obnovení selhalo"
+    }
+  },
+  "native_setup": {
+    "subtitle": "Sleduj každé sousto",
+    "use_locally": "Použít lokálně",
+    "use_locally_desc": "Všechna data zůstanou na tomto zařízení. Funguje offline, bez serveru. Později se můžeš připojit k serveru v Nastavení.",
+    "connect_to_server": "Připojit k serveru",
+    "connect_to_server_desc": "Synchronizuj se svým NutriTrace serverem. Data máš na všech zařízeních i ve webové aplikaci.",
+    "server_url": "URL serveru",
+    "server_url_placeholder": "https://nutritrace.example.com",
+    "server_url_hint": "Až zadáš server, ukážou se možnosti přihlášení (heslo nebo SSO) podle toho, co server podporuje.",
+    "back": "Zpět",
+    "checking": "Kontroluji…",
+    "next": "Další",
+    "or": "nebo",
+    "oidc_sign_in_with": "Přihlásit přes {name}",
+    "username": "Uživatelské jméno",
+    "username_placeholder": "Tvoje uživatelské jméno",
+    "password": "Heslo",
+    "password_placeholder": "Tvoje heslo",
+    "no_auth_warning": "Tento server nemá nastavené žádné způsoby přihlášení. Požádej správce o zapnutí hesla nebo OIDC poskytovatele.",
+    "signing_in": "Přihlašuji…",
+    "sign_in": "Přihlásit se",
+    "errors": {
+      "server_url_required": "Zadej URL serveru",
+      "credentials_required": "Zadej přihlašovací údaje",
+      "browser_open_failed": "Nepodařilo se otevřít prohlížeč pro přihlášení",
+      "connected": "Připojeno k serveru",
+      "login_failed": "Přihlášení selhalo"
+    }
+  },
+  "profile": {
+    "title": "Profil",
+    "personal_info": "Osobní údaje",
+    "security": "Zabezpečení",
+    "change_photo": "Změnit fotku",
+    "full_name": "Celé jméno",
+    "full_name_placeholder": "Tvoje celé jméno",
+    "email_placeholder": "Pro obnovení hesla",
+    "nickname": "Přezdívka / zobrazované jméno",
+    "nickname_placeholder": "Jak tě máme oslovovat?",
+    "birthday": "Narozeniny",
+    "gender": "Pohlaví",
+    "gender_unset": "Nechci uvádět",
+    "change_password": "Změnit heslo",
+    "set_password": "Nastavit heslo",
+    "current_password": "Současné heslo",
+    "confirm_new_password": "Potvrď nové heslo",
+    "saved": "Profil uložen",
+    "password_changed": "Heslo změněno",
+    "linked_accounts": "Propojené účty",
+    "no_linked_accounts": "Zatím žádní poskytovatelé identity.",
+    "link_with": "Propojit s",
+    "unlink": "Odpojit",
+    "danger_zone": "Nebezpečná zóna",
+    "delete_account": "Smazat můj účet",
+    "delete_account_explainer": "Trvale smaže tvůj účet a všechna související data — jídla, pokrmy, deník, pohodu, nastavení.",
+    "delete_account_title": "Smazat účet?",
+    "delete_account_message": "Tvoje jídla, pokrmy, deník, nastavení a data pohody budou trvale smazána. Tohle nejde vrátit.",
+    "delete_account_confirm": "Smazat účet",
+    "deleting": "Mažu…",
+    "account_deleted": "Účet smazán",
+    "errors": {
+      "save_failed": "Profil se nepodařilo uložit",
+      "upload_failed": "Nahrání selhalo",
+      "password_change_failed": "Heslo se nepodařilo změnit",
+      "delete_account_failed": "Účet se nepodařilo smazat"
+    }
+  },
+  "wizard": {
+    "nav": {
+      "skip": "Přeskočit",
+      "get_started": "Začít",
+      "next": "Další",
+      "finish": "Hotovo"
+    },
+    "welcome": {
+      "title": "Vítej v NutriTrace",
+      "desc": "Tvůj osobní nutriční tracker. Nastavení ti zabere asi minutu."
+    },
+    "name": {
+      "title": "Jak ti máme říkat?",
+      "desc": "Používá se v pozdravech, postranním menu a u AI asistenta. Později to můžeš změnit v Nastavení.",
+      "placeholder": "Tvé jméno (volitelné)"
+    },
+    "usermgmt": {
+      "create_account_title": "Vytvoř si účet",
+      "create_account_desc": "Nastav si admin účet a zabezpeč svou instanci NutriTrace. Další uživatele můžeš pozvat později z Nastavení.",
+      "multi_user_title": "Podpora více uživatelů",
+      "multi_user_desc": "NutriTrace může běžet v režimu jednoho uživatele (výchozí) nebo více uživatelů se samostatnými přihlášeními a resetem hesla. Kdykoli to můžeš zapnout později v Nastavení.",
+      "enable_toggle": "Zapnout uživatelské účty",
+      "enable_toggle_hint": "Každý uživatel má vlastní jídelní deník, nastavení a profil",
+      "admin_section": "Admin účet",
+      "username_label": "Uživatelské jméno *",
+      "username_placeholder": "admin",
+      "nickname_label": "Přezdívka",
+      "nickname_placeholder": "Volitelné",
+      "full_name_label": "Celé jméno",
+      "full_name_placeholder": "Volitelné",
+      "email_label": "E-mailová adresa",
+      "email_placeholder": "Pro reset hesla (volitelné)"
+    },
+    "units": {
+      "title": "Jednotky měření",
+      "desc": "Jak měříš věci?",
+      "metric": "Metrické",
+      "imperial": "Imperiální"
+    },
+    "gender": {
+      "title": "Jaké je tvé pohlaví?",
+      "desc": "Používá se k výpočtu potřeby kalorií."
+    },
+    "dob": {
+      "title": "Kdy ses narodil/a?",
+      "desc": "Věk ovlivňuje metabolismus."
+    },
+    "height": {
+      "title": "Jaká je tvoje výška?",
+      "desc": "Používá se k odhadu potřeby kalorií.",
+      "label_cm": "Výška (cm)",
+      "label": "Výška",
+      "feet": "Stopy",
+      "inches": "Palce"
+    },
+    "integrations_cards": {
+      "configure": "Nastavit",
+      "skip_this": "Přeskočit",
+      "off": "Open Food Facts",
+      "usda": "USDA FoodData Central",
+      "mealie": "Mealie",
+      "ai": "AI asistent"
+    },
+    "weight": {
+      "title": "Jaká je tvoje váha?"
+    },
+    "target": {
+      "title": "Jaká je tvoje cílová váha?"
+    },
+    "activity": {
+      "title": "Jak jsi aktivní/á?",
+      "desc": "Ovlivňuje denní potřebu kalorií."
+    },
+    "integrations": {
+      "title": "Integrace",
+      "desc": "Připoj volitelné služby. Co nepotřebuješ, přeskoč — nastavit to můžeš později v Nastavení."
+    },
+    "notifications": {
+      "title": "Drž se plánu",
+      "desc": "Dostávej užitečné připomínky a oslavuj úspěchy. Všechno si můžeš upravit později v Nastavení."
+    },
+    "updates": {
+      "title": "Kontrola aktualizací",
+      "desc": "Tvůj server ti řekne, až bude nový NutriTrace.",
+      "toggle": "Automaticky kontrolovat aktualizace",
+      "toggle_sub": "Tak se dozvíš o nových funkcích, opravách a bezpečnostních aktualizacích",
+      "note": "Tvůj server se každých pár hodin ptá GitHubu, jestli je novější NutriTrace. Nic o tobě ani tvých datech se neodesílá. Kdykoli to změníš v Nastavení → Aktualizace."
+    },
+    "summary": {
+      "title": "Tvé denní cíle",
+      "desc": "Spočítáno z tvých údajů podle vzorce Mifflin-St Jeor."
+    },
+    "skip_modal": {
+      "title": "Přeskočit nastavení?",
+      "desc": "Cíle, jednotky a integrace si můžeš nastavit kdykoli v <strong>Nastavení</strong>. Do té doby se cíle kalorií nebudou počítat automaticky.",
+      "continue": "Pokračovat v nastavení",
+      "skip_now": "Teď přeskočit"
+    }
+  },
+  "diary": {
+    "add_food": "Přidat jídlo",
+    "notes_placeholder": "Jaký byl dnešek? Spánek, energie, hlad, chutě…",
+    "quick_calories": {
+      "title": "Rychlé kalorie",
+      "title_meal": "Rychlé kalorie: {meal}",
+      "default_name": "Rychlé kalorie",
+      "help": "Zaznamenej jen {unit}, když nemáš úplné nutriční údaje, nebo když jídlo nechceš modelovat. Přidá se rovnou do deníku; položka jídla se nevytvoří.",
+      "name_label": "Název (volitelné)",
+      "name_placeholder": "Svačina v práci, hotelová snídaně...",
+      "value_label": "{unit}",
+      "add": "Přidat",
+      "adding": "Přidávám…",
+      "cancel": "Zrušit",
+      "summed_hint": "přepni na Oddělené pro úpravu jednotlivých položek"
+    },
+    "nav": {
+      "previous_day": "Předchozí den",
+      "next_day": "Další den",
+      "jump_to_date": "Přejít na datum"
+    },
+    "actions": {
+      "cancel_selection": "Zrušit výběr",
+      "delete_selected": "Smazat vybrané",
+      "log_water": "Zaznamenat vodu",
+      "log_water_long": "Voda — zaznamenej příjem vody",
+      "nutrition_summary": "Souhrn výživy",
+      "nutrition_summary_long": "Souhrn výživy — kompletní rozpis dnešních živin",
+      "mark_day_complete": "Označit den jako hotový",
+      "unmark_day_complete": "Zrušit označení dne",
+      "body_stats": "Tělesné údaje",
+      "body_stats_long": "Tělesné údaje — zaznamenej váhu, tuk a míry"
+    },
+    "day_complete": {
+      "marked_toast": "Den označen jako hotový",
+      "auto_marked_toast": "Všechna jídla označena; den se uzavřel sám",
+      "unmarked_toast": "Označení dne zrušeno",
+      "error_toast": "Nepodařilo se aktualizovat označení dne",
+      "meal_reminders_hint": "Tip: zapni připomínky jídel v Nastavení → Oznámení, ať nezapomeneš jídlo před koncem dne.",
+      "confirm_empty_title": "Uzavřít den s prázdnými jídly?",
+      "confirm_empty_msg": "Tato jídla nemají žádné položky a nejsou označená jako přeskočená: {names}. Přesto uzavřít? Prázdné sloty se označí jako záměrně přeskočené, takže se tě ten den znovu nezeptá.",
+      "confirm_empty_ok": "Přesto uzavřít",
+      "confirm_empty_cancel": "Nechat otevřené",
+      "status": {
+        "today": "Dnes",
+        "yesterday": "Včera",
+        "progress": "{done} z {total} jídel zaznamenáno",
+        "mark_complete": "Označit den jako hotový",
+        "closed_headline": "Den hotový",
+        "closed_at": "Uzavřeno v {time}",
+        "reopen": "Znovu otevřít"
+      }
+    },
+    "toast": {
+      "body_stats_saved": "Tělesné údaje uloženy",
+      "updated": "Aktualizováno",
+      "item_removed": "Položka odstraněna",
+      "activity_removed": "Aktivita odstraněna"
+    },
+    "empty": {
+      "tap_to_add_food": "Klepni pro přidání jídla"
+    },
+    "server_error": {
+      "unreachable": "Nepodařilo se spojit se serverem —",
+      "retry": "Zkusit znovu"
+    },
+    "water": {
+      "custom": "Vlastní",
+      "add": "Přidat",
+      "remove": "Odebrat"
+    },
+    "edit_item": {
+      "save": "Uložit",
+      "remove_ingredient": "Odebrat ingredienci",
+      "remove_qc_entry": "Odebrat záznam",
+      "remove_qc_aria": "Odebrat záznam rychlých kalorií"
+    },
+    "confirm": {
+      "remove_item": "Odebrat položku {name}?",
+      "remove_fallback": "položka",
+      "clear_all_meal": "Vymazat všechny položky z {meal}?",
+      "clear_all_fallback": "jídlo"
+    },
+    "errors": {
+      "note_save_failed": "Uložení poznámky selhalo",
+      "name_required": "Zadej název",
+      "nothing_to_save": "Není co uložit",
+      "activity_save_failed": "Nepodařilo se uložit aktivitu",
+      "activity_delete_failed": "Nepodařilo se smazat aktivitu"
+    },
+    "activity": {
+      "section": "Aktivita",
+      "tap_to_add": "Klepni pro přidání aktivity",
+      "add": "Přidat aktivitu",
+      "add_to_diary": "Přidat do deníku",
+      "save_changes": "Uložit změny",
+      "title_add": "Přidat aktivitu",
+      "title_edit": "Upravit aktivitu",
+      "field_name": "Aktivita",
+      "field_name_placeholder": "např. Ranní túra",
+      "field_kcal": "Spálené kalorie",
+      "field_kcal_placeholder": "kcal",
+      "field_duration": "Doba",
+      "field_duration_placeholder": "minuty",
+      "field_distance": "Vzdálenost",
+      "field_distance_placeholder": "např. 10 mi",
+      "field_optional": "(volitelné)",
+      "saving": "Přidávám…",
+      "estimated_short": "odhad",
+      "wellness_hint": "Synchronizované tréninky ze zařízení najdeš v Pohodě",
+      "not_counted": "nepočítá se — používá se wearable",
+      "policy_chip": "Pravidlo: wearable má přednost. Přepni v Nastavení → Deník.",
+      "save_as_template": "Uložit jako šablonu",
+      "save_as_template_hint": "(příště připnuté ve výběru)",
+      "kcal_preview": "MET {met} × {weight_display} × {duration} min → {kcal} kcal",
+      "no_weight_hint": "Zaznamenej váhu v Tělesných údajích pro automatický odhad podle MET",
+      "suggest": {
+        "templates": "Šablony",
+        "past_entries": "Minulé záznamy",
+        "compendium": "Kompendium",
+        "template_badge": "Šablona"
+      },
+      "browse": {
+        "title": "Procházet aktivity",
+        "search_placeholder": "Hledat všechny aktivity",
+        "all_categories": "Všechny kategorie",
+        "no_matches": "Nic nenalezeno pro „{q}“",
+        "aria": "Procházet kompendium aktivit",
+        "tooltip": "Procházet aktivity"
+      },
+      "actions": {
+        "edit": "Upravit",
+        "delete": "Smazat"
+      },
+      "errors": {
+        "name_required": "Název je povinný",
+        "kcal_required": "Kalorie jsou povinné"
+      }
+    }
+  },
+  "foods": {
+    "off_no_values_listed": "Žádné hodnoty",
+    "off_skipped": "Vynecháno, protože Open Food Facts u nich nemá hodnoty „jak se prodává“: {names}. Přidej je v Jídlech s hodnotami z etikety.",
+    "category_all": "Vše",
+    "saved_meals": "Uložené pokrmy",
+    "search_empty_hint": "Zkus hledat v Open Food Facts nebo USDA výše",
+    "multi_portion_sheet": "Nastavit porce ({count} položek)",
+    "add_to_diary": "Přidat do deníku",
+    "tier": {
+      "reset": "Resetovat",
+      "off_data_quality": "Kvalita dat OFF",
+      "usda_data_type": "Typ dat USDA",
+      "off_high": "Vysoká",
+      "off_high_hint": "(≥70 %)",
+      "off_medium": "Střední",
+      "off_medium_hint": "(40–69 %)",
+      "off_low": "Nízká",
+      "off_low_hint": "(<40 %)",
+      "off_unknown": "Neznámá",
+      "off_unknown_hint": "(bez dat)",
+      "usda_foundation": "Foundation",
+      "usda_foundation_hint": "(kurátorovaná)",
+      "usda_sr_legacy": "SR Legacy",
+      "usda_sr_legacy_hint": "(referenční)",
+      "usda_survey": "Survey (FNDDS)",
+      "usda_survey_hint": "(složená)",
+      "usda_branded": "Branded",
+      "usda_branded_hint": "(od výrobce)",
+      "usda_experimental": "Experimental",
+      "usda_experimental_hint": "(výzkum)"
+    },
+    "search_placeholder": "Hledat jídla nebo naskenovat čárový kód…",
+    "scan_barcode": "Skenovat čárový kód",
+    "add_new": "Přidat nové",
+    "n_selected": "Vybráno: {n}",
+    "add_n": "Přidat {n}",
+    "adding": "Přidávám…",
+    "add_selected_to_diary": "Přidat vybrané do deníku",
+    "search_in": "Hledat v {source}",
+    "searching_in": "Hledám v {source}…",
+    "no_results_in": "Nic v {source}",
+    "looking_up_barcode": "Hledám čárový kód",
+    "detail": {
+      "edit": "Upravit",
+      "edit_aria": "Upravit jídlo",
+      "add_to_diary": "Přidat do deníku",
+      "add_to_diary_aria": "Přidat do deníku",
+      "add_to_which_meal": "Do kterého jídla?",
+      "off_prepared_only": "Open Food Facts u tohoto produktu uvádí jen hodnoty „jak je připraveno“. Klepni na Upravit, prohlédni si je a zvol, jestli je použít.",
+      "off_implausible": "Open Food Facts u tohoto produktu uvádí jen hodnoty „jak je připraveno“ a ty nemůžou sedět. Klepni na Upravit a zadej hodnoty z etikety.",
+      "off_none": "Open Food Facts u tohoto produktu nemá výživové hodnoty. Klepni na Upravit a zadej je z etikety.",
+      "per_serving": "na porci",
+      "barcode": "Čárový kód",
+      "added_to": "Přidáno do {meal}",
+      "delete_aria": "Smazat jídlo",
+      "delete_confirm_title": "Smazat toto jídlo?",
+      "delete_confirm_body": "„{name}“ bude odstraněno z tvých jídel. Existující záznamy v deníku, které na něj odkazují, zůstanou.",
+      "deleted": "Jídlo smazáno"
+    },
+    "sources": {
+      "local": "Lokální",
+      "from_others": "Od ostatních",
+      "all": "Vše",
+      "shared": "Sdílené",
+      "mealie": "Mealie"
+    },
+    "all_mode": {
+      "search_hint": "Hledej napříč všemi zapnutými zdroji",
+      "searching": "Hledám ve všech zdrojích…",
+      "no_matches": "Pro „{q}“ nikde nic",
+      "loading_more": "Načítám další…",
+      "still_searching_others": "Ještě hledám v dalších zdrojích…"
+    },
+    "offline": {
+      "source": "potřebuje připojení",
+      "search_hint": "Jsi offline, takže se hledalo jen v tvých jídlech. Open Food Facts, USDA a ostatní zdroje potřebují připojení.",
+      "barcode": "Jsi offline, takže se tento čárový kód hledal jen v tvých jídlech.",
+      "import": "Tento import potřebuje připojení. Fungovat začne, až budeš znovu online."
+    },
+    "loading_library": "Načítám…",
+    "pagination": {
+      "showing_x_of_y": "Zobrazeno {shown} z {total}",
+      "loading_more": "Načítám další…"
+    },
+    "toast": {
+      "deleted": "Smazáno",
+      "cloned": "Naklonováno",
+      "added_to_diary": "Přidáno do deníku",
+      "meal_partly_added": "Některé ingredience se nepodařilo přidat: {names}",
+      "meal_none_added": "Tento pokrm se nepodařilo přidat. Zkontroluj připojení a zkus to znovu.",
+      "meal_stale_ingredients": "Přidáno do deníku. Tyto ingredience už v tvých jídlech nejsou: {names}. Uprav pokrm, ať to sedí."
+    }
+  },
+  "trace": {
+    "food_card": {
+      "log_to": "Zapsat do",
+      "dont_log": "Nezapisovat"
+    },
+    "panel_label": "Chat s AI koučem",
+    "ask_placeholder": "Zeptej se na cokoli…",
+    "clear_conversation": "Vymazat konverzaci",
+    "clear_confirm_title": "Vymazat tuto konverzaci?",
+    "clear_confirm_message": "Zprávy v této konverzaci se smažou. Tohle nejde vrátit.",
+    "clear_confirm_ok": "Vymazat",
+    "attach_image": "Přiložit obrázek",
+    "fab": {
+      "release_to_cancel": "Pusť pro zrušení",
+      "recording_release": "Nahrávám — pusť pro zápis",
+      "open_with_voice_hint": "Otevřít AI kouče (podrž pro diktování jídla)",
+      "tap_chat_hold_voice": "Klepni pro chat · podrž pro zápis jídla hlasem",
+      "open_short": "AI asistent"
+    },
+    "setup": {
+      "api_key_required": "Je potřeba API klíč",
+      "api_key_desc": "Přidej klíč AI poskytovatele v <strong>Nastavení → AI asistent</strong> a můžeš chatovat.",
+      "supported_providers": "Podporuje Anthropic Claude, OpenAI a Google Gemini.",
+      "open_settings": "Otevřít Nastavení"
+    }
+  },
+  "goals_page": {
+    "adaptive": {
+      "title": "Adaptivní TDEE",
+      "learned": "Naučeno <strong>{value} {unit}/den</strong> · trend váhy {trend} kg/týden",
+      "building": "Sbírám data: <strong>{available} / {required}</strong> dní s váhou i deníkem",
+      "help_button": "Jak to funguje",
+      "today_goal": "Dnešní cíl",
+      "confidence": "Spolehlivost",
+      "weight_source": "Zdroj váhy",
+      "until_ready": "Než bude hotovo, platí tvůj pevný cíl {value} {unit}.",
+      "help_headline": "Jak to funguje.",
+      "help_intro": "Adaptivní TDEE se učí tvůj skutečný denní výdej energie z trendu váhy za posledních 35 dní spolu s tím, kolik jsi opravdu snědl/a. Matematika:",
+      "help_step_1": "Vyhladí řadu váhy (lineární regrese za 35 dní).",
+      "help_step_2": "Převede trend na denní energetickou bilanci (1 kg tělesné hmoty ≈ 7 700 kcal).",
+      "help_step_3": "TDEE = průměrný denní příjem − tato denní bilance.",
+      "help_best_intro": "Pro nejlepší výsledky:",
+      "help_best_weigh": "<strong>Váž se často</strong> — ideálně denně, obden je v pohodě. Řídká data se interpolují, ale víc měření = čistší signál. Připojená váha (Withings, Fitbit, Garmin, Health Connect) to dělá sama; ruční zápisy tělesných statistik taky fungují.",
+      "help_best_log": "<strong>Zapisuj jídlo důsledně.</strong> Chybějící dny se z výpočtu vyřadí. Když zapisuješ jen půlku dní, odhad bude hlučný.",
+      "help_best_switch": "<strong>Nepřepínej cíle uprostřed okna.</strong> 35denní klouzavý průměr se časem ustálí. Když každý týden střídáš cut a bulk, naučené TDEE bude zaostávat.",
+      "help_best_reweigh": "<strong>Váž se za podobných podmínek</strong> — ráno hned po vstávání, po toaletě, před jídlem a pitím. Denní výkyvy jsou hlavně voda; důležitý je trend.",
+      "help_caveats": "<strong>Omezení.</strong> Velké změny aktivity (začal/a jsi běhat, zlomil/a sis nohu) se plně projeví až za ~2 týdny. Týdny na cestách s nedostatečně zapsaným jídlem můžou odhad vytáhnout nahoru. Naučené TDEE se násobí faktorem cíle (Zhubnout −20 % / Udržet / Nabrat +20 %) a z toho je tvůj skutečný denní cíl."
+    },
+    "empty": {
+      "no_goals": "Zatím nemáš žádné cíle.",
+      "add_hint": "Přejdi na záložku <strong>Všechna pole</strong> a cíle přidej.",
+      "no_templates": "Zatím žádné šablony.",
+      "no_templates_hint": "Ulož své aktuální cíle a vytvoř první šablonu."
+    },
+    "sections": {
+      "body_stats": "Tělesné statistiky",
+      "nutrients": "Živiny",
+      "water": "Voda",
+      "wellness": "Pohoda"
+    },
+    "row": {
+      "not_set": "Nenastaveno",
+      "no_goal": "Bez cíle",
+      "min": "(min)",
+      "stale_tip": "Nejnovější údaj za posledních 30 dní — platí, dokud nezapíšeš novou hodnotu",
+      "daily_water_goal": "Denní cíl vody"
+    },
+    "all_fields": {
+      "intro": "Klepni na pole a nastav nebo uprav jeho cíl."
+    },
+    "templates": {
+      "intro": "Ulož aktuální cíle jako pojmenovanou šablonu a použij ji později.",
+      "save_button": "Uložit aktuální cíle",
+      "goals_count": "{count} cílů",
+      "apply": "Použít",
+      "delete_template": "Smazat šablonu",
+      "save_title": "Uložit jako šablonu",
+      "template_name": "Název šablony",
+      "template_placeholder": "např. Cut — léto 2025",
+      "snapshot_hint": "Uloží snapshot všech {count} aktuálních cílů.",
+      "save_template": "Uložit šablonu",
+      "apply_title": "Použít šablonu",
+      "apply_confirm": "Použít <strong>{name}</strong>?",
+      "apply_desc": "Nahradí tvé aktuální cíle {count} cíli uloženými v této šabloně.",
+      "cancel": "Zrušit"
+    },
+    "editor": {
+      "display": "Zobrazení",
+      "show_in_diary": "Zobrazit v Deníku",
+      "show_in_statistics": "Zobrazit ve Statistikách",
+      "goal_behavior": "Chování cíle",
+      "same_every_day": "Stejný cíl každý den",
+      "one_target": "Jeden cíl pro každý den",
+      "per_weekday": "Jiný cíl podle dne v týdnu",
+      "minimum_goal": "Minimální cíl",
+      "min_hint_true": "Musíš dosáhnout alespoň této hodnoty",
+      "min_hint_false": "Nesmíš překročit tuto hodnotu",
+      "as_percent_calories": "Cíl jako % kalorií",
+      "as_percent_hint": "Cíl se škáluje podle tvého kalorického cíle",
+      "auto_adjust": "Automaticky podle aktivity",
+      "auto_adjust_hint": "Upraví se podle spálených kalorií z wearables",
+      "target": "Cíl",
+      "targets_per_day": "Cíle podle dne",
+      "value_percent_of_cal": "% kalorií",
+      "value_label": "Hodnota ({unit})",
+      "value_label_day": "{day} ({unit})",
+      "remove_goal": "Odebrat cíl",
+      "water_sheet_label": "Cíl ({unit})"
+    }
+  },
+  "goals": {
+    "save_goal": "Uložit cíl",
+    "toast": {
+      "goal_saved": "Cíl uložen",
+      "water_goal_saved": "Cíl vody uložen",
+      "template_saved": "Šablona uložena",
+      "template_applied": "„{name}“ použito"
+    }
+  },
+  "settings_main": {
+    "group_display": "Zobrazení",
+    "custom_color": "Vlastní barva",
+    "persistent_sidebar": "Trvalý postranní panel",
+    "persistent_sidebar_desc": "Postranní panel zůstane otevřený a posune obsah stránky místo překrytí. Dostupné na tabletech, skládacích telefonech a desktopu.",
+    "start_page": "Úvodní stránka",
+    "reduce_motion": "Omezit animace",
+    "goal_pulse": "Animace dosažení cíle",
+    "goal_pulse_desc": "Při dosažení denního cíle zabliká nutriční lišta v deníku. Push notifikace při cílech najdeš v Notifikacích.",
+    "page_banners": "Bannery stránek",
+    "page_banners_desc": "Styl záhlaví nahoře na každé stránce. Animovaný je kompaktní lišta s přechodem v akcentové barvě a zvoleným pohybem, Gradient je stejná lišta bez pohybu, Vypnuto je prosté skleněné záhlaví.",
+    "banner_animated": "Animovaný",
+    "banner_gradient": "Gradient",
+    "banner_off": "Vypnuto",
+    "anim_style": "Styl animace",
+    "anim_style_desc": "Shimmer je jemný bílý přejezd, Drift je pomalá rotace odstínu, Pulse je jemné dýchání, Aurora je měkký obláček světla v akcentové barvě. Vše respektuje Omezit animace.",
+    "anim_shimmer": "Shimmer",
+    "anim_drift": "Drift",
+    "anim_pulse": "Pulse",
+    "anim_aurora": "Aurora"
+  },
+  "settings_diary": {
+    "show_brand": "Zobrazit značky",
+    "show_brand_desc": "Zobrazit značku pod názvem každého jídla",
+    "show_timestamps": "Zobrazit časové značky",
+    "show_timestamps_desc": "Zobrazit čas, kdy byla položka zaznamenána",
+    "show_thumbnails": "Zobrazit náhledy",
+    "show_thumbnails_desc": "Fotky jídla/pokrmu vedle každé položky",
+    "show_all_nutrients": "Zobrazit všechny živiny",
+    "show_all_nutrients_desc": "U součů jídla ukázat každou dostupnou živinu (vitamíny, minerály atd.), ne jen makra",
+    "show_units": "Zobrazit jednotky výživy",
+    "show_units_desc": "Přidat „g“ / „mg“ / atd. za číselné hodnoty",
+    "show_macro_summary": "Zobrazit souhrn maker u jídla",
+    "show_macro_summary_desc": "Lišta B/S/T dole u každého jídla; klepnutím plný rozpad živin",
+    "ask_quantity": "Zeptat se na množství při přidání",
+    "ask_quantity_desc": "Před přidáním jídla se zeptá na velikost porce (jinak použije výchozí)",
+    "default_field": "Výchozí pole",
+    "default_field_desc": "Do kterého boxu skočí kurzor, když přidáváš jídlo nebo upravuješ záznam v deníku.",
+    "opt_num_servings": "Počet porcí",
+    "opt_serving_size": "Velikost porce",
+    "unit_metadata": "Zobrazit metadata jednotek",
+    "unit_metadata_desc": "Přidá tři pole v editoru jídla: Základ výživy (na 100 g vs na 100 ml), Jednotky porcí (1 plátek = 35 g, 1 láhev = 500 ml atd.) a Hustotu (g/ml) pro přesný převod objemu na hmotnost u tekutin. Také ukáže rychlé chipy porcí na listu Přidat do deníku a příponu „na 100 g/ml“ v seznamu jídel. Ve výchozím stavu vypnuto — zapni, když loguješ tekutiny z Open Food Facts v gramech, nebo chceš vlastní jednotky jako plátek / sušenka / láhev.",
+    "warn_conversions": "Varovat při převodu jednotek",
+    "warn_conversions_desc": "Zobrazí varování, když zvolíš hmotnostní jednotku (g/oz) u jídla s výživou na 100 ml, nebo naopak, a jídlo nemá nastavenou hustotu. Záložní výpočet předpokládá 1 ml ≈ 1 g, což u olejů, medu atd. jen zhruba sedí.",
+    "show_portion": "Zobrazit velikost porce",
+    "show_portion_desc": "U každé položky deníku zobrazit „150g“ / „1 cup“ atd.",
+    "show_daily_notes": "Zobrazit denní poznámky",
+    "show_daily_notes_desc": "Sekce volného textu dole v deníku každého dne",
+    "show_completion": "Zobrazit dokončení dne",
+    "show_completion_desc": "Přidá přepínač fajfky do lišty data deníku, abys mohl den uzavřít, až je vše zaznamenané. Označené dny mají zelenou fajfku na týdenním pásu, ve výběru data i ve statistikách. Také přidá fajfku u každé karty jídla a před uzavřením dne potvrdí prázdná jídla. Ve výchozím stavu vypnuto: nikde žádné UI dokončení.",
+    "show_quick_cals": "Zobrazit tlačítko rychlých kalorií",
+    "show_quick_cals_desc": "Přidá ikonu blesku u každého jídla pro rychlé zadání jen kalorií (bez jídla a porce). Hodí se, když kalorie znáš, ale nechceš jídlo modelovat, nebo když přicházíš z „rychlých kalorií“ ve stylu Fitbit.",
+    "quick_cals_display": "Zobrazení rychlých kalorií",
+    "quick_cals_display_desc": "Jak se v deníku zobrazí více záznamů rychlých kalorií ve stejném jídle. Sečtené je sloučí do jednoho řádku, Oddělené ukáže každý záznam zvlášť.",
+    "opt_summed": "Sečtené",
+    "opt_separate": "Oddělené",
+    "show_activity": "Zobrazit sekci aktivity",
+    "show_activity_desc": "Sekce Aktivity se seznamem záznamů v Deníku pro logování cvičení. Každý záznam má název + spálené kalorie. Hodí se, když nemáš napojení na wearables.",
+    "adjust_calorie_goal": "Upravit kalorický cíl podle aktivity",
+    "adjust_calorie_goal_desc": "Když je zapnuto, dnešní spálení (ruční + wearable podle politiky níže) zvedne zbývající kalorie na den — model „earn-back“. Když je vypnuto, aktivity se pořád logují a zobrazují, ale cíl zůstane na základní hodnotě.",
+    "policy_wearable_wins": "Wearable má přednost",
+    "policy_wearable_desc": ", ruční záznamy se v deníku ukazují, ale do výpočtu cíle nezasahují. Výchozí, bez rizika dvojího započítání.",
+    "policy_manual_wins": "Ruční má přednost",
+    "policy_manual_desc": ", tvůj ručně zadaný součet nahradí spálení z wearables za den.",
+    "policy_add": "Sečíst dohromady",
+    "policy_add_desc": ", sečte obojí. ⚠ Riziko dvojího započítání, pokud wearable už aktivitu viděl.",
+    "show_fasting": "Zobrazit sledování půstu",
+    "show_fasting_desc": "Přidá časovač přerušovaného půstu nahoru do Deníku. Spusť půst, sleduj uplynulý čas a postup k cíli, ukonči až budeš hotový.",
+    "default_fast_goal": "Výchozí cíl půstu",
+    "notify_goal": "Upozornit při dosažení cíle",
+    "notify_goal_desc": "Pošle oznámení, až aktivní půst dosáhne cíle, ať nemusíš pořád kontrolovat Deník.",
+    "recurring_schedule": "Opakovaný rozvrh",
+    "start_time": "Čas začátku",
+    "repeat_on": "Opakovat",
+    "schedule_goal": "Cíl rozvrhu",
+    "show_progress_bar": "Zobrazit lištu denních cílů",
+    "show_progress_bar_desc": "Lišta postupu dole v deníku, kolik z denních cílů už máš splněno",
+    "meal_names": "Názvy jídel"
+  },
+  "settings_water": {
+    "display_unit": "Jednotka zobrazení",
+    "show_in_diary": "Zobrazit v deníku",
+    "show_in_statistics": "Zobrazit ve statistikách",
+    "containers_title": "Nádoby na vodu",
+    "no_containers": "Zatím žádné nádoby",
+    "add_container": "Přidat nádobu"
+  },
+  "settings_scanner": {
+    "recipes_sort": "Řazení receptů",
+    "beep_on_scan": "Pípnutí při úspěšném skenu",
+    "use_flashlight": "Svítilna při skenování",
+    "crop_photos": "Oříznout fotky při nahrání"
+  },
+  "settings_goals": {
+    "calorie_goal_mode": "Režim kalorického cíle",
+    "calorie_goal_mode_desc": "Jak se počítá tvůj denní kalorický cíl",
+    "mode_fixed": "Pevný",
+    "mode_dynamic": "Dynamický",
+    "mode_adaptive": "Adaptivní",
+    "goal_factor": "Faktor cíle",
+    "factor_maintain": "Udržet",
+    "adaptive_note": "Z 35 dnů váhy + deníku se učí tvoje skutečné TDEE a denně ho upravuje. Než bude dost dat, drží se pevného cíle. Stav uvidíš na kartě připravenosti na stránce Cíle.",
+    "how_it_works": "Jak to funguje →",
+    "dynamic_needs_wearable": "Dynamický režim potřebuje wearable, který hlásí spálené kalorie (Fitbit, Garmin nebo Google Health).",
+    "dynamic_needs_wearable_setup": "Nastav ho v Pohodě"
+  },
+  "settings_stats": {
+    "default_chart": "Výchozí typ grafu",
+    "show_average_line": "Zobrazit průměrnou čáru",
+    "show_goal_line": "Zobrazit čáru cíle",
+    "show_trend_line": "Zobrazit trendovou čáru",
+    "include_today": "Zahrnout dnešek do trendů",
+    "show_empty_days": "Zobrazit prázdné dny",
+    "custom_nutrients": "Vlastní živiny",
+    "no_custom_nutrients": "Žádné vlastní živiny",
+    "no_categories": "Zatím žádné kategorie",
+    "label": "Štítek",
+    "custom_units": "Vlastní jednotky",
+    "no_custom_units": "Zatím žádné vlastní jednotky",
+    "full_name": "Celý název"
+  },
+  "settings_integrations": {
+    "group": "Integrace",
+    "enable_usda": "Zapnout USDA FoodData",
+    "mealie_section": "Mealie",
+    "enable_mealie": "Zapnout Mealie",
+    "cooktrace_section": "CookTrace",
+    "enable_cooktrace": "Zapnout CookTrace",
+    "cooktrace_desc": "Import receptů z tvé self-hosted instance CookTrace",
+    "base_url": "Základní URL",
+    "connected": "Připojeno",
+    "last_synced": "Naposledy synchronizováno",
+    "local_mode": "Lokální režim",
+    "local_mode_desc": "Všechna data jen na tomto zařízení",
+    "server_url": "URL serveru",
+    "username": "Uživatelské jméno",
+    "password": "Heslo",
+    "admin_section": "Admin",
+    "enable_sharing": "Zapnout sdílení jídel",
+    "bulk_share": "Hromadné sdílení",
+    "vis_private": "Soukromé",
+    "vis_group": "Všichni",
+    "vis_specific": "Konkrétní lidé"
+  },
+  "settings_diagnostics": {
+    "diag_mode": "Diagnostický režim",
+    "view_logs": "Zobrazit diagnostické logy",
+    "logs_desc_web": "Nedávné řádky z konzole aplikace. Hodí se k hlášení chyb — zkopíruj / sdílej do",
+    "logs_desc_android": " Na Androidu s zapnutým diagnostickým režimem můžeš také sdílet uložený log soubor nebo zachycený crash report.",
+    "logs_note": "Nic se nikam automaticky neodesílá.",
+    "calibration_export": "Export kalibrace",
+    "crash_available": "Crash report k dispozici",
+    "log_help": "Nedávné řádky logu (běžně max. 500, ve verbose režimu 1000). Hlavička ukazuje verzi aplikace + platformu, ať příjemce ví, na co kouká. Před veřejným sdílením zacenzuruj hodnoty HRV / RHR / váhy / kalorií — jsou to osobní zdravotní data."
+  },
+  "settings_admin_group": "Admin",
+  "settings_about": {
+    "support_note": "NutriTrace je navždy zdarma na self-hosting. Aktuální cíl je Mac a iPhone, aby Trace aplikace mohly pořádně běžet na iOS.",
+    "food_data_from": "Data o jídle z",
+    "food_data_license": "(ODbL)",
+    "server_from": "Server:",
+    "server_open_source": "Open Source",
+    "server_license": "(AGPL-3.0)",
+    "translations_from": "Překlady díky",
+    "support_dev": "Podpořit vývoj"
+  },
+  "settings_merge": {
+    "title": "Možnosti synchronizace",
+    "upload": "Nahrát telefon na server",
+    "download": "Stáhnout server do telefonu",
+    "merge": "Sloučit obojí",
+    "cancel": "Zrušit",
+    "continue": "Pokračovat"
+  },
+  "settings_color": {
+    "saturation": "Sytost",
+    "lightness": "Světlost",
+    "hex_code": "Hex kód",
+    "apply_color": "Použít barvu"
+  },
+  "time_picker": {
+    "hour": "Hodina",
+    "minute": "Minuta",
+    "cancel": "Zrušit",
+    "set_time": "Nastavit čas"
+  },
+  "nutrition_facts": {
+    "title": "Nutriční hodnoty",
+    "serving_size": "Velikost porce",
+    "amount_per": "Množství na porci"
+  },
+  "fasting_insights": {
+    "title": "Půst",
+    "avg_duration": "Průměrná délka",
+    "longest": "Nejdelší",
+    "current_streak": "Aktuální série",
+    "longest_streak": "Nejdelší série"
+  },
+  "bulk_import": {
+    "download_template": "Stáhnout šablonu",
+    "clear": "Vymazat",
+    "will_import": "Importuje se",
+    "cancel": "Zrušit"
+  },
+  "meal_editor_deep": {
+    "readonly_recipe": "Klepni na Uložit do mého katalogu, ať si recept přetáhneš do katalogu a můžeš ho upravit.",
+    "readonly_meal": "Klepni na Uložit do mého katalogu, ať si jídlo přetáhneš do katalogu a můžeš ho upravit.",
+    "notes_ph": "Volitelné poznámky…",
+    "total_amount": "Celkové množství",
+    "take_photo": "Vyfotit",
+    "crop_photo": "Oříznout fotku"
+  },
+  "quick_calories": {
+    "name_ph": "Svačina v práci, hotelová snídaně…",
+    "optional_macros": "Volitelná makra",
+    "protein": "Bílkoviny",
+    "carbs": "Sacharidy",
+    "cancel": "Zrušit"
+  },
+  "fasting": {
+    "start_fasting": "Začít půst",
+    "hours_ph": "Hodiny",
+    "name_ph": "Název (volitelné)",
+    "start": "Start",
+    "end_fast": "Ukončit půst",
+    "cancel": "Zrušit"
+  },
+  "smart_log": {
+    "off_no_values": "Open Food Facts nemá hodnoty „jak se prodává“ pro tento produkt, takže se nezaznamená. Vyměň ho nebo odeber.",
+    "placeholder": "k snídani jsem měl 2 vejce a toast",
+    "title": "Chytrý zápis",
+    "badge_local": "Lokální",
+    "badge_recipe": "Recept",
+    "badge_yesterday": "Včera",
+    "badge_water": "Voda",
+    "badge_not_found": "Nenalezeno"
+  },
+  "foods_deep": {
+    "cant_reach_retry_msg": "Server nejde dosáhnout, ",
+    "retry": "Zkusit znovu",
+    "serving_size": "Velikost porce",
+    "servings": "Porce",
+    "num_servings": "Počet porcí",
+    "total_amount": "Celkové množství",
+    "total": "Celkem"
+  },
+  "settings_main_deep": {
+    "search_ph": "Hledat v nastavení…",
+    "meal_placeholder": "Jídlo {n}",
+    "container_name_ph": "Název (např. Moje láhev)",
+    "volume_ph": "Objem",
+    "server_username_ph": "Tvoje uživatelské jméno",
+    "server_password_ph": "Tvoje heslo",
+    "bearer_ph": "Bearer token"
+  },
+  "wellness_deep": {
+    "no_stage_data": "Žádná data o fázích",
+    "garmin": "Garmin",
+    "daily_readiness": "Denní připravenost",
+    "resting_hr": "Klídová TF",
+    "sleep": "Spánek",
+    "penalties": "Penalizace",
+    "resilience": "Odolnost",
+    "physical_calmness": "Tělesný klid",
+    "activity_balance": "Vyváženost aktivity",
+    "sleep_patterns": "Vzorce spánku",
+    "body_scan_scores": "Skóre body scanu",
+    "segmental_analysis": "Segmentová analýza",
+    "muscle_lean_note": "Sval = kontraktilní svalová tkáň. Lean = všechna netuková tkáň (sval + kost + voda). Lean je vždy vyšší než sval. Tyto hodnoty jsou absolutní hmotnosti; procenta v aplikacích zařízení můžou počítat jinak.",
+    "muscle": "Sval",
+    "connect_withings": "Připojit Withings",
+    "no_gps": "Žádná GPS data",
+    "duration": "Trvání",
+    "distance": "Vzdálenost",
+    "steps": "Kroky",
+    "avg_hr": "Prům. TF",
+    "peak_hr": "Max. TF"
+  },
+  "diary_deep": {
+    "day_notes": "Poznámky ke dni",
+    "consumed": "Snědeno",
+    "remaining": "Zbývá",
+    "water": "Voda",
+    "quick_add": "Rychlé přidání",
+    "no_water_today": "Dnes zatím žádná voda",
+    "qce_name_ph": "Svačina v práci, hotelová snídaně...",
+    "optional_macros": "Volitelná makra",
+    "protein": "Bílkoviny",
+    "carbs": "Sacharidy",
+    "fat": "Tuky",
+    "serving_size": "Velikost porce",
+    "num_servings": "Počet porcí",
+    "logged_time": "Čas záznamu",
+    "total_amount": "Celkové množství",
+    "cancel": "Zrušit",
+    "meal_name": "Název jídla",
+    "body_stats": "Tělesné údaje",
+    "nutrition_summary": "Souhrn výživy"
+  },
+  "wizard_deep": {
+    "off_user_ph": "Uživatelské jméno (volitelné)",
+    "off_pass_ph": "Heslo (volitelné)",
+    "usda_search": "Hledat v databázi potravin a živin USDA",
+    "usda_key_ph": "Vlož sem svůj USDA API klíč",
+    "mealie_url_ph": "URL Mealie (např. http://mealie:9000)",
+    "mealie_token_ph": "API token",
+    "env_locked": "Nastaveno přes proměnné prostředí",
+    "api_key_ph": "API klíč",
+    "enable_notifications": "Zapnout notifikace",
+    "hydration_reminders": "Připomínky hydratace",
+    "meal_reminders": "Připomínky jídel",
+    "goal_celebrations": "Oslavy cílů",
+    "wellness_alerts": "Upozornění pohody",
+    "starting_tdee": "Výchozí TDEE",
+    "water_goal": "Cíl vody",
+    "current_weight": "Aktuální váha",
+    "target_weight": "Cílová váha",
+    "activity_level": "Úroveň aktivity",
+    "adjust_note": "Kdykoli to upravíš v Nastavení. Po zhruba měsíci zapisování může Adaptivní režim v Nastavení → Cíle cíl doladit podle skutečného vývoje váhy."
+  },
+  "settings_custom_nutrient": {
+    "name": "Název živiny",
+    "add": "Přidat živinu"
+  },
+  "settings_foods_picker": {
+    "show_thumbnails": "Zobrazit náhledy",
+    "show_thumbnails_desc": "Fotky jídla/pokrmu v seznamu výběru",
+    "show_categories": "Zobrazit kategorie",
+    "show_categories_desc": "Filtrovací chipy nahoře ve výběru Jídel",
+    "show_category_labels": "Zobrazit štítky kategorií",
+    "show_category_labels_desc": "Zobrazit název kategorie + emoji u každého řádku jídla",
+    "show_notes": "Zobrazit poznámky",
+    "show_notes_desc": "Zobrazit uložené poznámky k jídlu (např. „1 porce = 150 g vařeného“) na kartě rychlého přidání",
+    "default_source": "Výchozí zdroj hledání",
+    "default_source_desc": "S jakým chipem zdroje se otevře stránka Jídla. Vše rozprostře hledání do všech zapnutých databází; Moje jídla začne v tvé lokální knihovně.",
+    "foods_sort": "Řazení jídel",
+    "meals_sort": "Řazení pokrmů",
+    "opt_recent": "Nedávno použité",
+    "opt_most": "Nejpoužívanější",
+    "opt_alpha": "Abecedně"
+  },
+  "barcode_scanner": {
+    "toast": {
+      "cam_denied": "Přístup ke kameře zamítnut",
+      "scan_failed": "Sken čárového kódu selhal: {error}",
+      "unknown_error": "Neznámá chyba"
+    },
+    "close": "Zavřít skener",
+    "close_short": "Zavřít",
+    "torch": "Přepnout baterku",
+    "title": "Skenovat čárový kód",
+    "library": "Knihovna",
+    "camera": "Kamera",
+    "manual_ph": "Nebo zadej čárový kód ručně…",
+    "lookup": "Vyhledat"
+  },
+  "food_editor": {
+    "off_prepared": {
+      "only_prepared": "Open Food Facts u tohoto produktu uvádí jen hodnoty „připravené“: {kcal} kcal na 100 {unit}. Tak se podává (namíchané, sceděné nebo uvařené), což nemusí odpovídat tomu, jak to vážíš.",
+      "use": "Použít tyto hodnoty",
+      "implausible": "Open Food Facts u tohoto produktu uvádí jen hodnoty „připravené“, a ty nemůžou sedět ({kcal} kcal na 100 {unit}). Zadej hodnoty z etikety.",
+      "none": "Open Food Facts u tohoto produktu nemá výživové hodnoty. Zadej je z etikety.",
+      "note": "Výživové hodnoty jsou „připravené“ (z Open Food Facts)."
+    },
+    "name_placeholder": "Název jídla",
+    "brand_placeholder": "Značka (volitelné)",
+    "saved": "Uloženo",
+    "added_to_diary": "Přidáno do deníku",
+    "card_photo": "Fotka",
+    "card_basic": "Základní info",
+    "card_categories": "Kategorie",
+    "card_notes": "Poznámky",
+    "card_nutrition": "Výživa",
+    "take_photo": "Vyfotit",
+    "crop_photo": "Oříznout fotku",
+    "crop_hint": "Přetažením rámečku posuneš; tahem za roh změníš velikost",
+    "draft_restored": "Obnoveny dřívější neuložené změny.",
+    "draft_discard": "Zahodit",
+    "field_brand": "Značka",
+    "field_serving_size": "Velikost porce",
+    "field_unit": "Jednotka",
+    "field_nutrition_basis": "Základ výživy",
+    "field_serving_units": "Jednotky porcí",
+    "field_barcode": "Čárový kód",
+    "placeholder_optional": "Volitelné",
+    "notes_placeholder": "Volitelné poznámky",
+    "readonly_sub": "Klepni na Uložit do mého katalogu, ať to můžeš upravit.",
+    "photo_remove": "Odstranit fotku",
+    "close_camera": "Zavřít kameru",
+    "cancel": "Zrušit",
+    "scan_barcode": "Naskenovat čárový kód",
+    "scan_label_title": "Vyfoť výživovou etiketu a vyplň tato pole",
+    "remove_serving_unit": "Odstranit jednotku porce",
+    "toast": {
+      "camera_denied": "Přístup ke kameře odepřen nebo není k dispozici.",
+      "barcode_set": "Čárový kód nastaven",
+      "off_upload_failed": "Nepodařilo se nahrát na Open Food Facts: {error}",
+      "off_not_found": "Nenalezeno v Open Food Facts",
+      "off_refreshed": "Data obnovena z Open Food Facts",
+      "off_updated": "{count, plural, one {Aktualizována # hodnota z Open Food Facts} few {Aktualizovány # hodnoty z Open Food Facts} other {Aktualizováno # hodnot z Open Food Facts}}. Ulož, ať se zachovají.",
+      "off_up_to_date": "Už odpovídá Open Food Facts",
+      "off_prepared_only": "Open Food Facts u tohoto produktu má jen hodnoty „připravené“, takže se nic nezměnilo",
+      "off_units_differ": "Toto jídlo je v {unit}, na které se hodnoty z Open Food Facts nedají převést, takže se nic nezměnilo",
+      "off_no_nutrition": "Open Food Facts u tohoto produktu zatím nemá výživové hodnoty",
+      "off_offline": "Obnova z Open Food Facts potřebuje připojení. Fungovat bude, až budeš zase online.",
+      "off_prepared_used": "{count, plural, one {Použita # hodnota „připravené“} few {Použity # hodnoty „připravené“} other {Použito # hodnot „připravené“}}. Ulož, ať se zachovají.",
+      "refresh_failed": "Obnova selhala: {error}",
+      "label_read_failed": "Etiketu se nepodařilo přečíst. Zkus ostřejší fotku.",
+      "nutrition_extracted": "Výživa načtena z etikety",
+      "scan_failed": "Skenování selhalo: {error}",
+      "saved_copy": "Kopie uložena do tvého katalogu",
+      "save_copy_failed": "Nepodařilo se uložit kopii: {error}",
+      "save_failed": "Uložení selhalo: {error}",
+      "unknown_error": "neznámá chyba"
+    },
+    "errors": {
+      "name_required": "Zadej název"
+    }
+  },
+  "meal_editor": {
+    "meal_name_placeholder": "Název jídla",
+    "recipe_name_placeholder": "Název receptu",
+    "card_photo": "Fotka",
+    "draft_restored": "Obnoveny neuložené změny z dřívějška.",
+    "draft_discard": "Zahodit",
+    "card_categories": "Kategorie",
+    "card_notes": "Poznámky",
+    "card_nutrition_totals": "Součty výživy",
+    "add_ingredient": "Přidat ingredienci",
+    "save_changes": "Uložit změny",
+    "ct_refresh": {
+      "headline": "CookTrace má novější obsah",
+      "sub": "Obnov, ať stáhneš nejnovější název, ingredience a součty.",
+      "refresh": "Obnovit",
+      "dismiss": "Zavřít",
+      "refreshed_toast": "Recept obnoven z CookTrace",
+      "error_toast": "Nepodařilo se obnovit z CookTrace",
+      "deleted_toast": "Recept smazán"
+    },
+    "ct_deleted": {
+      "headline": "Zdroj CookTrace už není k dispozici",
+      "sub": "Původní recept na CookTrace byl smazán nebo už nejde přečíst s tímto tokenem.",
+      "unlink": "Odpojit",
+      "delete": "Smazat"
+    },
+    "use_this_crop": "Použít tento ořez",
+    "back": "Zpět",
+    "search_placeholder": "Hledat…",
+    "scan_barcode": "Skenovat čárový kód",
+    "field_serving_size": "Velikost porce",
+    "field_unit": "Jednotka",
+    "field_quantity": "Množství",
+    "servings": {
+      "title": "Porce",
+      "amount_placeholder": "Automaticky z ingrediencí",
+      "total_weight_hint": "Celková hmotnost. Automaticky z ingrediencí; přepiš při změnách vařením (např. odpar).",
+      "yields_unit": "porcí",
+      "yields_hint": "Kolik porcí tento recept dá.",
+      "per_serving_label": "Na porci:"
+    },
+    "errors": {
+      "no_ingredients": "Přidej aspoň jednu ingredienci",
+      "off_no_values": "Open Food Facts nemá hodnoty „jak se prodává“ pro {name}. Přidej ho v Jídlech s hodnotami ze štítku a pak ho vyber tady."
+    }
+  },
+  "settings_wellness": {
+    "master": {
+      "label": "Sledování aktivity",
+      "desc": "Přidá sekci Pohoda pro synchronizaci dat z fitness trackerů a váhy.",
+      "schedule_note": "Rozvrh synchronizace nastavíš u každého zařízení níže."
+    },
+    "common": {
+      "sync": "Synchronizovat",
+      "syncing": "Synchronizuji…",
+      "disconnect": "Odpojit",
+      "disconnecting": "Odpojuji…",
+      "connect": "Připojit",
+      "connecting": "Připojuji…",
+      "save": "Uložit",
+      "save_and_connect": "Uložit a připojit",
+      "linked": "Propojeno",
+      "not_connected": "Nepřipojeno",
+      "loading_status": "Načítám stav připojení…",
+      "days": "dnů",
+      "sync_range": "Rozsah synchronizace",
+      "sync_mode": "Režim synchronizace",
+      "mode_auto": "Auto (při otevření)",
+      "mode_manual": "Jen ručně",
+      "mode_scheduled": "Podle plánu",
+      "interval": "Interval",
+      "sync_at": "Synchronizovat v",
+      "active_window": "Aktivní okno",
+      "active_window_desc": "Synchronizovat jen v těchto hodinách. Nech prázdné pro celý den.",
+      "time_start": "Začátek",
+      "time_end": "Konec",
+      "time_range_sep": "až",
+      "last_sync_ok": "✓ Synchronizováno {count} metrik za {date}",
+      "last_sync_error": "Chyba synchronizace: {error}",
+      "change_creds_title": "Změnit API přihlašovací údaje",
+      "api_credentials": "API přihlašovací údaje",
+      "client_id": "Client ID",
+      "client_secret": "Client Secret",
+      "hide": "Skrýt",
+      "show": "Zobrazit",
+      "redirect_uri": "Redirect URI",
+      "use_suggested": "Použít navrhované",
+      "copy_uri": "Kopírovat URI",
+      "visible_metrics": "Viditelné metriky",
+      "copied": "Zkopírováno",
+      "copy_failed": "Nepodařilo se zkopírovat. Vyber text ručně.",
+      "experimental": "Experimentální",
+      "save_failed_prefix": "Uložení selhalo: ",
+      "sync_failed": "Synchronizace selhala: {error}",
+      "reset_visible_metrics": "Resetovat všechny viditelné metriky",
+      "workout_history": "Historie tréninků",
+      "workout_history_desc": "Zobrazit zaznamenané tréninky s GPS mapami trasy na kartě Pohyb. Vyžaduje zařízení s GPS.",
+      "custom_days_ph": "dnů",
+      "custom_days_title": "Vlastní počet dnů (max. {max})",
+      "authorize_desc": "Povol NutriTrace číst tvoje data z {provider}.",
+      "authorize_desc_fitbit": "Povol NutriTrace číst tvoje data z Fitbit přes Google Health.",
+      "server_only_desc": "Pro OAuth ověření je potřeba připojení k serveru. V lokálním režimu použij Health Connect níže a čti data {provider} přímo z Android zařízení.",
+      "sync_range_desc": "Jak daleko do minulosti sahá ruční tlačítko Synchronizovat.",
+      "sync_range_desc_fitbit": "Jak daleko do minulosti sahá ruční tlačítko Synchronizovat. Automatická synchronizace vždy bere jen dnešek.",
+      "register_uri_note": "Zaregistruj přesně tuto URI v nastavení aplikace",
+      "consumer_key": "Consumer Key",
+      "consumer_key_ph": "Tvůj Garmin Consumer Key",
+      "consumer_secret": "Consumer Secret"
+    },
+    "lifttrace_ovr": {
+      "prefer_label": "Preferovat data z wearables před LiftTrace",
+      "prefer_desc": "Když LiftTrace pošle odhad spálených kalorií dokončeného tréninku a wearable (Fitbit, Garmin, Google Health, Health Connect) už má za stejný den denní součet, vyhraje číslo z wearables, aby se nepočítalo dvakrát (denní součet už trénink zahrnuje). Tréninky z LiftTrace se v Pohodě pořád ukazují, jen se nepřipočítávají navíc. Vypni to, když wearable zvedání železa míjí a radši chceš počítat odhad z LiftTrace po tréninku."
+    },
+    "fitbit_deep": {
+      "server_only": "Pro OAuth ověření je potřeba připojení k serveru. V lokálním režimu použij Health Connect níže a čti data Fitbit přímo z Android zařízení.",
+      "legacy_desc": "Kroky, aktivita, fáze spánku, tep, HRV, SpO2. Legacy Fitbit Web API se ruší — nová připojení by měla používat Google Health níže.",
+      "retired_desc": "Legacy Fitbit Web API se ruší. Pro synchronizaci dat Fitbit se připoj přes Google Health níže — používá stejná podkladová data přes Fitness API od Google.",
+      "relink_label": "Znovu propojit do 31. 5. 2026",
+      "authorize_desc": "Povol NutriTrace číst tvoje data z Fitbit přes Google Health.",
+      "setup_desc": "Nastavení Fitbit teď běží přes Google Cloud Console (legacy dev.fitbit.com už nepřijímá nové registrace aplikací). Vytvoř OAuth 2.0 klienta typu Web server a vlož sem Client ID + Secret.",
+      "setup_link": "Návod k nastavení →",
+      "client_id_ph": "Z Google Cloud Console → APIs & Services → Credentials",
+      "redirect_note": "Přidej přesně tuto URI do seznamu Authorized redirect URIs u OAuth klienta v Google Cloud",
+      "redirect_format": "Formát:"
+    },
+    "garmin_deep": {
+      "server_only": "Pro OAuth ověření je potřeba připojení k serveru. V lokálním režimu použij Health Connect níže a čti data Garmin přímo z Android zařízení.",
+      "metrics_desc": "Kroky, spánek, tep, HRV, SpO2, Body Battery, stres. Vyžaduje partnerství Garmin Health API.",
+      "authorize_desc": "Povol NutriTrace číst tvoje data z Garmin."
+    },
+    "withings_deep": {
+      "server_only": "Pro OAuth ověření je potřeba připojení k serveru. V lokálním režimu použij Health Connect níže a čti data Withings přímo z Android zařízení.",
+      "authorize_desc": "Povol NutriTrace číst tvoje data z Withings."
+    },
+    "fitbit": {
+      "title": "Fitbit",
+      "linked_via_google": "Propojeno přes Google Health",
+      "enable": "Zapnout Fitbit",
+      "local_mode_desc": "Pro OAuth ověření je potřeba připojení k serveru…",
+      "enable_desc": "Kroky, aktivita, fáze spánku, tep, HRV, SpO2…",
+      "retired_label": "Fitbit Web API zrušeno",
+      "retired_desc": "Legacy Fitbit Web API se ruší…",
+      "sync_range_desc": "Jak daleko do minulosti sahá ruční tlačítko Synchronizovat. Automatická synchronizace vždy bere jen dnešek.",
+      "long_range_warn": "⚠ Dlouhé rozsahy můžou trvat několik minut a blížit se limitům Fitbit API.",
+      "relink_required": "Znovu propojit do 31. 5. 2026",
+      "relink_button": "Znovu propojit Fitbit",
+      "authorize_desc": "Povol NutriTrace číst tvoje data z Fitbit přes Google Health.",
+      "setup_guide_link": "Návod k nastavení →",
+      "client_id_placeholder": "Z Google Cloud Console → APIs & Services → Credentials",
+      "redirect_help": "Přidej přesně tuto URI do seznamu Authorized redirect URIs u OAuth klienta v Google Cloud",
+      "workout_history": "Historie tréninků",
+      "workout_history_desc": "Zobrazit zaznamenané tréninky s GPS mapami trasy na kartě Pohyb. Vyžaduje zařízení s GPS.",
+      "disconnected": "Odpojeno od Fitbit",
+      "auth_start_failed": "Nepodařilo se spustit autorizaci Fitbit",
+      "creds_saved": "Přihlašovací údaje Fitbit uloženy",
+      "synced_count": "Synchronizováno {count} metrik za {date}"
+    },
+    "garmin": {
+      "title": "Garmin",
+      "enable": "Zapnout Garmin",
+      "enable_desc": "Kroky, spánek, tep, HRV, SpO2, Body Battery, stres. Vyžaduje partnerství Garmin Health API.",
+      "apply_link": "Požádat o přístup →",
+      "long_range_warn": "⚠ API Garminu spolehlivě drží historická data zhruba do 6 měsíců…",
+      "authorize_desc": "Povol NutriTrace číst tvoje data z Garmin.",
+      "creds_desc": "OAuth 1.0a přihlašovací údaje z schválené aplikace Garmin Health API. Redirect URI musí sedět přesně.",
+      "creds_link": "Získat API přihlašovací údaje →",
+      "consumer_key": "Consumer Key",
+      "consumer_key_placeholder": "Tvůj Garmin Consumer Key",
+      "consumer_secret": "Consumer Secret",
+      "redirect_help": "Zaregistruj přesně tuto URI v nastavení Garmin aplikace",
+      "disconnected": "Odpojeno od Garmin",
+      "auth_start_failed": "Nepodařilo se spustit autorizaci Garmin",
+      "creds_saved": "Přihlašovací údaje Garmin uloženy",
+      "synced_count": "Synchronizováno {count} metrik Garmin za {date}",
+      "sync_failed": "Synchronizace Garmin selhala: "
+    },
+    "withings": {
+      "title": "Withings",
+      "enable": "Zapnout Withings",
+      "enable_desc": "Složení těla z váhy (váha, % tuku, svaly, kostní hmota a další).",
+      "dashboard_link": "Developer dashboard →",
+      "long_range_warn": "⚠ Dlouhé rozsahy můžou trvat několik minut a blížit se limitům Withings API.",
+      "authorize_desc": "Povol NutriTrace číst tvoje data z Withings.",
+      "creds_desc": "Vytvoř si vývojářský účet Withings…",
+      "client_id_placeholder": "např. abc123def456",
+      "redirect_help": "Přidej přesně tuto URI do seznamu redirect URL u aplikace Withings",
+      "disconnected": "Odpojeno od Withings",
+      "auth_start_failed": "Nepodařilo se spustit autorizaci Withings",
+      "creds_saved": "Přihlašovací údaje Withings uloženy",
+      "synced_count": "Synchronizováno {count} metrik Withings za {date}",
+      "sync_failed": "Synchronizace Withings selhala: "
+    },
+    "hc": {
+      "title": "Health Connect",
+      "permission_granted": "Oprávnění uděleno",
+      "data_types_readable": "{n} typ(ů) dat čitelných z Health Connect",
+      "not_installed": "Health Connect není nainstalovaný. Nainstaluj ho z Play Store.",
+      "not_supported": "Health Connect na tomto zařízení není podporovaný.",
+      "not_supported_short": "Na tomto zařízení nepodporováno",
+      "perms_not_granted": "Oprávnění neudělena. Zkus otevřít aplikaci Health Connect → Oprávnění aplikací → NutriTrace a zapni je ručně.",
+      "perm_denied": "Oprávnění neudělena. Zkus otevřít aplikaci Health Connect → Oprávnění aplikací → NutriTrace a zapni je ručně.",
+      "enabled_success": "Health Connect zapnut ({count} typů dat)",
+      "enabled_toast": "Health Connect zapnut ({n} typů dat)",
+      "enable_label": "Zapnout Health Connect",
+      "enable": "Zapnout Health Connect",
+      "enable_desc": "Číst kroky, tep, spánek, váhu a aktivitu z Android Health Connect. Data z jakéhokoli připojeného wearable.",
+      "status_label": "Stav",
+      "status_unsupported": "Na tomto zařízení nepodporováno",
+      "mode_scheduled": "Podle plánu",
+      "bg_sync_label": "Synchronizace na pozadí",
+      "bg_sync_desc": "Běží každou hodinu na pozadí i když je NutriTrace zavřený, takže dnešní data z wearables už jsou na serveru, když otevřeš NutriTrace jinde. Když synchronizace přestane, zkontroluj Nastavení Android → Aplikace → NutriTrace → Baterie a nastav Neomezeno. Některé launchery (Samsung, Xiaomi, OnePlus) taky potřebují NutriTrace v „aplikacích, které nespí“ nebo whitelistu autostartu.",
+      "synced_count": "Synchronizováno {count} metrik Health Connect za {date}",
+      "sync_failed": "Synchronizace Health Connect selhala: "
+    },
+    "lifttrace": {
+      "title": "LiftTrace",
+      "prefer_wearable": "Preferovat data z wearables před LiftTrace",
+      "prefer_wearable_desc": "Když LiftTrace pošle odhad spálených kalorií dokončeného tréninku…"
+    }
+  },
+  "settings_auth": {
+    "toast": {
+      "issuer_client_required": "Issuer URL a Client ID jsou povinné",
+      "redirect_required": "Je potřeba alespoň jedna redirect URI",
+      "provider_updated": "Poskytovatel aktualizován",
+      "provider_created": "Poskytovatel vytvořen",
+      "provider_deleted": "Poskytovatel smazán",
+      "need_active_provider": "Než vypneš přihlášení heslem, přidej alespoň jednoho aktivního OIDC poskytovatele.",
+      "password_login_enabled": "Přihlášení heslem zapnuto",
+      "password_login_disabled": "Přihlášení heslem vypnuto"
+    },
+    "confirm": {
+      "delete_provider": "Smazat poskytovatele „{name}“? Propojení uživatelé o tuto možnost přihlášení přijdou.",
+      "disable_password": "Vypnout přihlášení heslem? Uživatelé bez OIDC propojení se nepřihlásí, dokud to znovu nezapneš. RECOVERY_TOKEN bude dál fungovat."
+    },
+    "empty": {
+      "user_mgmt_required": "Je potřeba správa uživatelů",
+      "user_mgmt_required_desc": "Single Sign-On platí jen pro uživatelské účty, takže nejdřív musíš zapnout správu uživatelů. Nastav to v Nastavení → Správa uživatelů a pak se vrať sem.",
+      "admin_only": "Jen pro adminy",
+      "admin_only_desc": "Poskytovatele identity mohou nastavovat jen admini. Když potřebuješ přístup, požádej admina této instance NutriTrace o povýšení účtu."
+    },
+    "providers": {
+      "section_title": "OIDC poskytovatelé (Single Sign-On)",
+      "section_desc": "Authentik, Keycloak, Pocket ID, Authelia, Auth0, Google atd. Uživatelé se přihlásí přes svého stávajícího poskytovatele identity.",
+      "add_provider": "+ Přidat poskytovatele",
+      "env_lock_title": "Nastaveno přes environment variables — změnu udělej v .env / docker-compose",
+      "env_lock_pill": "env",
+      "test_title": "Otestovat Discovery",
+      "readonly_title": "Nastaveno přes environment, jen ke čtení",
+      "edit_title": "Upravit",
+      "delete_title": "Smazat",
+      "link_on": "zap",
+      "link_off": "vyp",
+      "disabled_suffix": " · vypnuto",
+      "row_summary": "{issuer} · link {link} · register {register}{disabled}",
+      "empty": "Zatím žádní poskytovatelé. Klikni na + Přidat poskytovatele, nebo je definuj v .env přes proměnné OIDC_* (viz README).",
+      "discovery_ok": "Discovery OK",
+      "discovery_failed": "Discovery selhalo"
+    },
+    "form": {
+      "provider_type": "Typ poskytovatele",
+      "display_name": "Zobrazovaný název",
+      "display_name_default_ph": "Authentik / Pocket ID / Google",
+      "issuer_url": "Issuer URL *",
+      "client_id": "Client ID *",
+      "client_secret_new": "Client Secret *",
+      "client_secret_edit": "Client Secret (nech prázdné pro zachování)",
+      "redirect_uris": "Redirect URI *",
+      "add_redirect": "+ Přidat Redirect URI",
+      "redirect_note": "Musí přesně sedět s tím, co máš v IdP. Cesta je /api/auth/oidc/callback/<provider-id> pod základní URL NutriTrace.",
+      "remove_title": "Odebrat",
+      "scope": "Scope",
+      "token_auth": "Metoda autentizace token endpointu",
+      "token_auth_post": "client_secret_post (výchozí)",
+      "token_auth_basic": "client_secret_basic",
+      "token_auth_none": "none (veřejný klient jen s PKCE)",
+      "auto_link": "Automaticky propojit existující uživatele (ověřený e-mail)",
+      "auto_link_desc": "Když IdP řekne email_verified=true a e-mail sedí na existujícího uživatele NutriTrace, při prvním SSO přihlášení se tiše propojí. Doporučeno ZAP pro IdP, kterému věříš ověřování e-mailů.",
+      "auto_register": "Automaticky registrovat nové uživatele",
+      "auto_register_desc": "Kdokoli s účtem u tohoto IdP si při prvním přihlášení vytvoří nový účet NutriTrace. VYP = admin musí nejdřív pozvat. Nech VYP u sdílených IdP (Google, firemní SSO), pokud nechceš blanket onboarding.",
+      "provider_active": "Poskytovatel aktivní",
+      "provider_active_desc": "Neaktivní poskytovatelé se na přihlašovací stránce nezobrazí.",
+      "admin_group_claim": "Claim admin skupiny (volitelné)",
+      "admin_group_claim_ph": "groups",
+      "admin_group_claim_desc": "Název claimu se seznamem skupin uživatele. Běžně: groups.",
+      "admin_group_value": "Hodnota admin skupiny (volitelné)",
+      "admin_group_value_ph": "NutriTraceAdmins",
+      "admin_group_value_desc": "Když claim groups uživatele obsahuje tuto hodnotu, při každém přihlášení se nastaví jako admin.",
+      "logo_url": "URL loga (volitelné)",
+      "logo_url_ph": "https://…/authentik.png",
+      "cancel": "Zrušit",
+      "saving": "Ukládám…",
+      "save_changes": "Uložit změny",
+      "create_provider": "Vytvořit poskytovatele"
+    },
+    "password_login": {
+      "label": "Povolit přihlášení heslem",
+      "desc": "Když je vypnuto, uživatelé se přihlašují jen přes OIDC. Obnova funguje přes env var RECOVERY_TOKEN.",
+      "env_locked": "Zamčeno environment variable OIDC_ENABLE_EMAIL_PASSWORD_LOGIN."
+    }
+  },
+  "settings_nutrition_import": {
+    "title": "Import historie výživy",
+    "desc": "Nahraj minulé dny z jiného trackeru. Stávající deník se nemění, dokud níže nezvolíš „nahradit“.",
+    "source_app": "Zdrojová aplikace",
+    "download_template": "Stáhnout šablonu CSV",
+    "file": "Soubor",
+    "choose_file": "Vybrat soubor",
+    "choose_different_file": "Vybrat jiný soubor",
+    "clear": "Vymazat",
+    "reading": "Čtu…",
+    "preview": "Náhled",
+    "stats_items": "položek",
+    "stats_days": "dní",
+    "stats_existing": "existující",
+    "existing_hint": "Dny, které už mají záznam v deníku",
+    "range": "Rozsah: {from} → {to}",
+    "unmapped_title": "Nemapované názvy jídel",
+    "unmapped_desc": "Tyto štítky neodpovídají žádnému tvému názvu jídla ({meals}). Importují se do posledního slotu ({lastMeal}). Vlastní názvy jídel přidej v Nastavení, pokud je chceš mít zvlášť.",
+    "and_more": "…a ještě {n}",
+    "first_items": "Prvních {n} položek:",
+    "dupes_days": "{n} den(dní) už má záznamy",
+    "dup_skip": "Přeskočit",
+    "dup_skip_desc": ", existující dny nechat (bezpečné)",
+    "dup_merge": "Sloučit",
+    "dup_merge_desc": ", importované položky přidat k existujícím dnům",
+    "dup_replace": "Nahradit",
+    "dup_replace_desc": ", přepsat existující dny (destruktivní)",
+    "cancel": "Zrušit",
+    "importing": "Importuji…",
+    "import_n": "Importovat {n} položek",
+    "import_one": "Importovat {n} položku",
+    "preview_failed": "Náhled selhal",
+    "import_failed": "Import selhal",
+    "imported_summary": "Importováno {days} den(dní), {items} položek {verb}",
+    "verb_imported": "importováno",
+    "verb_merged": "sloučeno",
+    "verb_replaced": "nahrazeno",
+    "sources": {
+      "spreadsheet_label": "Obecná tabulka",
+      "spreadsheet_hint": "Jakýkoli CSV s aspoň sloupci Date, Name a Calories. Pro nejjednodušší cestu použij naši šablonu.",
+      "cronometer_label": "Cronometer",
+      "cronometer_hint": "Account → Export Data → Food & Recipe Entries pro jednotlivá jídla. Cronometer u některých účtů výživu do toho souboru nedává; pokud nemáš sloupce s kaloriemi, použij Daily Nutrition se zaškrtnutým „Include diary group rows“, ať se přenesou součty po jídlech.",
+      "loseit_label": "Lose It!",
+      "loseit_hint": "loseit.com → Insights → Weekly → Export to Spreadsheet. Jeden CSV na týden — při více týdnech nejdřív spoj.",
+      "mfp_label": "MyFitnessPal",
+      "mfp_hint": "Jdi na myfitnesspal.com/reports/export, vyber období, klikni Export a počkej na e-mail. Funguje Free i Premium. Export je souhrn po jídlech a dnech — vznikne jeden deníkový záznam na jídlo se značkou „MyFitnessPal“ a zachovanými makry. Jednotlivá jídla v exportu nejsou, takže se nerekonstruují."
+    }
+  },
+  "settings_email": {
+    "intro": "Používá se pro reset hesla a pozvánky uživatelů",
+    "env_lock_banner": "Nastaveno přes proměnné prostředí, změny jsou vypnuté.",
+    "banner": {
+      "configured": "Nastaveno",
+      "last_test_sent": "Poslední test odeslán",
+      "error_hint": "Zkontroluj hostitele, přihlašovací údaje a adresu odesílatele",
+      "send_test": "Poslat test",
+      "no_test": "Zatím nebyl odeslán žádný test",
+      "sent_to": "Odesláno na {recipient}. Kdykoli znovu ověř přes Poslat test.",
+      "sent_generic": "Kdykoli znovu ověř přes Poslat test"
+    },
+    "toast": {
+      "test_sent": "SMTP testovací e-mail odeslán na {recipient}",
+      "test_failed_prefix": "SMTP test selhal: {detail}",
+      "host_required": "SMTP test selhal: hostitel je povinný",
+      "invalid_email": "Zadej platnou e-mailovou adresu",
+      "http_prefix": "HTTP {status}",
+      "network_error": "chyba sítě"
+    },
+    "form": {
+      "host": "SMTP hostitel",
+      "host_ph": "např. smtp.example.com",
+      "port": "Port",
+      "tls": "TLS",
+      "username": "E-mail nebo uživatelské jméno",
+      "username_ph": "SMTP uživatelské jméno nebo e-mail",
+      "password": "Heslo",
+      "password_ph": "SMTP heslo nebo app password",
+      "hide": "Skrýt",
+      "show": "Zobrazit",
+      "hide_pass_aria": "Skrýt heslo",
+      "show_pass_aria": "Zobrazit heslo",
+      "change": "Změnit",
+      "change_pass_title": "Změnit heslo",
+      "pass_saved_hint": "Heslo uloženo. Klepni na Změnit pro nahrazení.",
+      "from": "Adresa odesílatele",
+      "from_ph": "NutriTrace <noreply@example.com>",
+      "saved": "Uloženo",
+      "saving": "Ukládám…",
+      "save": "Uložit"
+    },
+    "test_dialog": {
+      "title": "Poslat testovací e-mail",
+      "question": "Kam máme test poslat?",
+      "recipient_ph": "ty@example.com",
+      "cancel": "Zrušit",
+      "send": "Odeslat"
+    }
+  },
+  "settings_api_tokens": {
+    "toast": {
+      "load_failed": "Načtení tokenů selhalo",
+      "scope_required": "Je potřeba alespoň jeden scope",
+      "create_failed": "Vytvoření selhalo",
+      "revoke_failed": "Zrušení selhalo",
+      "revoked": "Token zrušen",
+      "copied": "Token zkopírován do schránky",
+      "copy_failed": "Nepodařilo se zkopírovat. Vyber a zkopíruj ručně."
+    },
+    "intro_before": "Bearer tokeny pro sesterské TraceApps (LiftTrace, CookTrace",
+    "intro_middle": ") nebo jiné autorizované integrace ke čtení či zápisu tvých dat přes federation API na",
+    "intro_dev": "(ve vývoji)",
+    "intro_see": "Viz",
+    "just_created": {
+      "title": "Nový token:",
+      "warn": "Zkopíruj token teď. Znovu ho neuvidíš.",
+      "copy": "Kopírovat",
+      "saved": "Uložil/a jsem si ho"
+    },
+    "empty": {
+      "title": "Zatím žádné tokeny",
+      "desc": "Vytvoř jeden níže a externí aplikace může číst tvá data."
+    },
+    "row": {
+      "revoke_title": "Zrušit",
+      "scopes_label": "scopes:",
+      "scopes_none": "žádné",
+      "last_used": "naposledy použito {when}",
+      "expires": "vyprší {when}",
+      "never": "nikdy",
+      "just_now": "právě teď",
+      "min_ago": "před {n}m",
+      "hr_ago": "před {n}h",
+      "day_ago": "před {n}d"
+    },
+    "form": {
+      "new_token": "Nový token",
+      "name": "Název *",
+      "name_ph": "např. CookTrace, můj homelab dashboard",
+      "scopes": "Scopes *",
+      "expires_label": "Vyprší za (dny, volitelné)",
+      "expires_ph": "Nech prázdné pro neomezenou platnost",
+      "cancel": "Zrušit",
+      "creating": "Vytvářím…",
+      "create": "Vytvořit token"
+    },
+    "confirm": {
+      "revoke_title": "Zrušit „{name}“?",
+      "revoke_msg": "Aplikace s tímto tokenem okamžitě přestanou fungovat. Tohle nejde vrátit — musel/a bys vytvořit nový token a aktualizovat každou připojenou aplikaci.",
+      "revoke_confirm": "Zrušit"
+    }
+  },
+  "settings_webhooks": {
+    "intro": "Odchozí webhooky hned upozorní jinou službu, když se v NutriTrace něco stane: zaznamenané jídlo, voda, tělesný údaj nebo dosažený nutriční cíl. Každý webhook pošle podepsaný HTTP POST na URL, které zadáš.",
+    "disabled_notice": "Webhooky na tomto serveru nejsou zapnuté. Webhook můžeš vytvořit, ale nespustí se, dokud nenastavíš WEBHOOKS_ENABLED=1.",
+    "just_created": {
+      "title": "Webhook vytvořen:",
+      "warn": "Secret si teď zkopíruj. Už se znovu neukáže a budeš ho potřebovat k ověření podpisu doručení.",
+      "copy": "Kopírovat",
+      "saved": "Uložil jsem si ho"
+    },
+    "empty": {
+      "title": "Zatím žádné webhooky",
+      "desc": "Vytvoř jeden, ať se jiná služba dozví, když se něco stane."
+    },
+    "row": {
+      "last_delivery": "poslední doručení {when}",
+      "never": "nikdy",
+      "just_now": "právě teď",
+      "min_ago": "před {n}m",
+      "hr_ago": "před {n}h",
+      "day_ago": "před {n}d",
+      "status_success": "doručeno",
+      "status_failed": "selhalo",
+      "test_title": "Poslat testovací událost",
+      "enabled_title": "Zapnuto",
+      "delete_title": "Smazat webhook"
+    },
+    "form": {
+      "new_webhook": "Nový webhook",
+      "url": "Cílová URL *",
+      "url_ph": "https://example.com/webhook",
+      "events": "Události *",
+      "secret_label": "Secret (volitelné)",
+      "secret_ph": "Nech prázdné pro vygenerování",
+      "cancel": "Zrušit",
+      "create": "Vytvořit webhook",
+      "creating": "Vytvářím…"
+    },
+    "confirm": {
+      "delete_title": "Smazat tento webhook?",
+      "delete_msg": "Toto nelze vrátit. Cíl přestane dostávat události hned.",
+      "delete_confirm": "Smazat"
+    },
+    "toast": {
+      "load_failed": "Nepodařilo se načíst webhooky",
+      "url_required": "Zadej cílovou URL",
+      "event_required": "Vyber aspoň jednu událost",
+      "create_failed": "Nepodařilo se vytvořit webhook",
+      "update_failed": "Nepodařilo se aktualizovat webhook",
+      "delete_failed": "Nepodařilo se smazat webhook",
+      "deleted": "Webhook smazán",
+      "test_failed": "Testovací doručení selhalo",
+      "test_delivered": "Testovací událost doručena",
+      "copied": "Zkopírováno do schránky",
+      "copy_failed": "Nepodařilo se zkopírovat, vyber text ručně"
+    }
+  },
+  "settings_import_export": {
+    "toast": {
+      "backup_exported": "Záloha exportována",
+      "backup_restored_reload": "Záloha obnovena, načítám znovu...",
+      "export_failed_prefix": "Export selhal: {error}",
+      "import_failed_prefix": "Import selhal: {error}",
+      "csv_exported": "CSV exportováno",
+      "activity_csv_exported": "CSV aktivit exportováno",
+      "imported_foods": "Importováno {n} jídel",
+      "imported_foods_one": "Importováno {n} jídlo",
+      "imported_foods_skipped": "Importováno {n} jídel (přeskočeno {skipped} duplicitních čárových kódů)",
+      "imported_food_skipped": "Importováno {n} jídlo (přeskočen {skipped} duplicitní čárový kód)",
+      "unknown_error": "Neznámá chyba"
+    },
+    "sections": {
+      "import": "Import",
+      "export": "Export"
+    },
+    "actions": {
+      "bulk_import": "Hromadný import jídel",
+      "bulk_import_desc": "Vlož JSON nebo nahraj CSV a přidej víc jídel najednou. Hodí se pro jídla, která nejsou na Open Food Facts. Je tu šablona, aby LLM vytáhlo data z etikety do správného tvaru.",
+      "import_json": "Importovat JSON zálohu",
+      "import_json_desc": "Obnoví z dříve exportovaného JSON souboru. Sloučí se stávajícími daty, nic už uloženého nesmaže.",
+      "export_json": "Exportovat JSON zálohu",
+      "export_json_desc": "Lehčí přenosný formát, jen JSON, bez obrázků. Hodí se ke sdílení dat mezi účty nebo rychlému textovému exportu.",
+      "export_diary_csv": "Exportovat deník jako CSV",
+      "export_diary_csv_desc": "Stáhne celou historii deníku jako tabulku. Hodí se pro analýzu v Excelu nebo Google Sheets.",
+      "export_full_nutrition_csv": "Exportovat plnou výživu jako CSV",
+      "export_full_nutrition_csv_desc": "Dlouhý export s časem položky, názvem jídla, značkou a každou vestavěnou i vlastní živinou (s jednotkami). Nejlepší pro osobní databáze a dlouhodobou analytiku.",
+      "export_activity_csv": "Exportovat aktivitu jako CSV",
+      "export_activity_csv_desc": "Stáhne celý ruční log aktivit (název, kalorie, trvání, vzdálenost, MET) jako tabulku."
+    }
+  },
+  "settings_trace": {
+    "toast": {
+      "connected": "Trace AI připojeno, asistent je připraven",
+      "test_failed": "Test selhal",
+      "empty_response": "Prázdná odpověď od AI"
+    },
+    "provider_env_locked": "Zamčeno environmentem",
+    "env_lock_banner": "Nastaveno přes environment variables, změny jsou vypnuté.",
+    "labels": {
+      "enable": "Zapnout AI asistenta",
+      "enable_desc": "Přidá plovoucí tlačítko chatu na všechny stránky",
+      "provider": "Poskytovatel",
+      "base_url": "Základní URL",
+      "base_url_ph": "http://localhost:11434  nebo  https://api.deepseek.com",
+      "base_url_desc": "Jakýkoli OpenAI Compatible endpoint /v1/chat/completions — Ollama, LM Studio, LocalAI, vLLM, server llama.cpp, DeepSeek, Groq, Together AI, Mistral La Plateforme atd. Nechej jen origin, bez cesty.",
+      "model": "Model",
+      "custom_model_id": "Vlastní ID modelu",
+      "custom_model_hint": "Zadej přesné ID modelu od dodavatele. Použij, když v předvolbách ten model nemáš.",
+      "reliability_title": "Spolehlivost tool calls se liší podle modelu.",
+      "reliability_body": "Llama 3.1+, Mistral, Qwen 2.5+ je zvládají dobře. Menší nebo starší modely můžou tiše rozbít Smart Log a Goal Insights. Vision (přílohy obrázků) potřebuje multimodální model. Když si nejsi jistý/á, začni ověřeným modelem a zkontroluj, že chat funguje, než se na něj spolehneš.",
+      "api_key": "API klíč",
+      "api_key_optional_suffix": " (volitelné)",
+      "api_key_ph_local": "Pro lokální endpointy nech prázdné (Ollama atd.)",
+      "api_key_ph_cloud": "Vlož sem svůj API klíč",
+      "hide": "Skrýt",
+      "show": "Zobrazit",
+      "key_stored_device": "Tvůj klíč je uložený na tomto zařízení.",
+      "key_stored_server": "Tvůj klíč je bezpečně uložený na serveru.",
+      "key_hint_claude": "Klíč získáš na",
+      "key_hint_openai": "Klíč získáš na",
+      "key_hint_gemini": "Klíč získáš na",
+      "key_hint_oai_compat": "Lokální endpointy (Ollama, LM Studio atd.) obvykle klíč nepotřebují. Cloudoví poskytovatelé jako DeepSeek nebo Groq ano — získej ho v jejich dashboardu.",
+      "assistant_name": "Jméno asistenta",
+      "assistant_name_ph": "Trace",
+      "smart_log": "Smart Log",
+      "smart_log_desc": "Podrž tlačítko asistenta, řekni, co jsi snědl/a — AI rozparsuje položky a slot jídla, najde shodu v databázi jídel a před uložením se zeptá na potvrzení",
+      "voice_lang": "Jazyk hlasového vstupu",
+      "voice_lang_desc": "Jazyk, kterému mikrofon naslouchá. Výchozí je jazyk zařízení — přepiš, když mluvíš jiným jazykem, než máš nastavený v zařízení.",
+      "trigger_words": "Spouštěcí slova",
+      "trigger_meal": "„moje X jídlo“ → uložená jídla",
+      "trigger_recipe": "„můj X recept“ → uložené recepty",
+      "trigger_yesterday": "„stejně jako včera k obědu“ → zkopíruje včerejší položky",
+      "smart_log_readme": "Kompletní příklady a detaily o soukromí najdeš v sekci Smart Log v README.",
+      "activity_estimate": "Odhadovat kalorie z aktivity",
+      "activity_estimate_desc": "Když přes Trace zapíšeš trénink bez čísla kalorií („šel/šla jsem 10 mil“), Trace odhadne výdej z tvého tělesného profilu. Odhad potřebuje váhu, výšku, věk a pohlaví — když něco chybí, odhadovač se pozastaví a Trace se místo toho zeptá na číslo.",
+      "goal_insights": "Goal Insights",
+      "goal_insights_desc": "Asistent analyzuje trendy příjmu a proaktivně navrhne úpravy cílů, když jsou vzorce konzistentní"
+    },
+    "voice_langs": {
+      "auto": "Auto (jazyk zařízení)",
+      "en_US": "Angličtina (US)",
+      "en_GB": "Angličtina (UK)",
+      "it_IT": "Italština",
+      "es_ES": "Španělština (Španělsko)",
+      "es_MX": "Španělština (Mexiko)",
+      "fr_FR": "Francouzština",
+      "de_DE": "Němčina",
+      "pt_BR": "Portugalština (Brazílie)",
+      "pt_PT": "Portugalština (Portugalsko)",
+      "nl_NL": "Nizozemština",
+      "pl_PL": "Polština",
+      "ru_RU": "Ruština",
+      "sv_SE": "Švédština",
+      "da_DK": "Dánština",
+      "nb_NO": "Norština",
+      "fi_FI": "Finština",
+      "cs_CZ": "Čeština",
+      "tr_TR": "Turečtina",
+      "ja_JP": "Japonština",
+      "ko_KR": "Korejština",
+      "zh_CN": "Čínština (zjednodušená)",
+      "zh_TW": "Čínština (tradiční)",
+      "hi_IN": "Hindština",
+      "ar_SA": "Arabština"
+    }
+  },
+  "settings_backup": {
+    "toast": {
+      "backup_created": "Záloha vytvořena",
+      "backup_failed": "Záloha selhala",
+      "backup_failed_prefix": "Záloha selhala: {error}",
+      "restore_failed": "Obnovení selhalo",
+      "restore_failed_prefix": "Obnovení selhalo: {error}",
+      "restored_summary": "Obnoveno {foods} jídel · {meals} pokrmů · {recipes} receptů · {diary} dní · {wellness} metrik",
+      "backup_deleted": "Záloha smazána",
+      "share_failed_prefix": "Sdílení selhalo: {error}",
+      "share_saved_at": "Uloženo: {uri}",
+      "full_backup_created": "Plná záloha vytvořena",
+      "cant_load_backups": "Nepodařilo se načíst zálohy ({status})",
+      "upload_too_large": "Nahrání selhalo: soubor překračuje maximální velikost povolenou serverem nebo reverse proxy. Při vzdáleném přístupu zkus nahrát z lokální sítě.",
+      "server_error_prefix": "Chyba serveru {status}",
+      "all_data_cleared": "Všechna data smazána",
+      "all_settings_cleared": "Všechna nastavení smazána",
+      "clear_failed_prefix": "Mazání selhalo: {error}"
+    },
+    "confirm": {
+      "restore_local": "Obnovit „{name}“? Stávající data se sloučí, nesmažou se.",
+      "delete_local": "Smazat „{name}“? Tohle nejde vrátit."
+    },
+    "share": {
+      "title": "NutriTrace záloha",
+      "dialog_title": "Sdílet zálohu"
+    },
+    "progress": {
+      "reading": "Čtu…",
+      "percent_label": "{percent}% — {label}",
+      "restoring_backup": "Obnovuji zálohu…",
+      "restore_complete": "Obnovení hotovo — načítám znovu…",
+      "uploading": "Nahrávám zálohu…",
+      "uploading_pct": "Nahrávám… {percent}%",
+      "restoring_on_server": "Obnovuji na serveru…"
+    },
+    "sections": {
+      "full_backup": "Plná záloha",
+      "danger_zone": "Nebezpečná zóna"
+    },
+    "full_backup": {
+      "desc_server": "Kompletní snapshot všeho: všechna uživatelská data, deník, jídla, pokrmy, recepty, nastavení a nahrané obrázky. Uloženo na serveru, kdykoli ke stažení nebo obnovení.",
+      "desc_local": "Kompletní snapshot všeho: všechna jídla, pokrmy, recepty, deník, data pohody, tréninky, nastavení A vložené soubory obrázků. Uloženo do složky Dokumenty na zařízení, připraveno k přenosu telefon–telefon bez serveru.",
+      "auto_backup": "Automatická záloha",
+      "env_lock_title": "Zamčeno env proměnnými BACKUP_SCHEDULE / BACKUP_TIME / BACKUP_RETENTION",
+      "env_lock_pill": "Zamčeno env",
+      "schedule": "Rozvrh",
+      "schedule_off": "Vypnuto",
+      "schedule_daily": "Denně",
+      "schedule_weekly": "Týdně",
+      "schedule_monthly": "Měsíčně",
+      "time": "Čas",
+      "keep_last": "Ponechat posledních",
+      "last_failed": "Poslední autozáloha selhala: {error}",
+      "last_success": "Poslední autozáloha: {when}",
+      "next": "Další: {when}",
+      "next_when_open": "Další: {when} (spustí se, když je appka otevřená)",
+      "retention_note": "Ponechá {n} nejnovější zálohu; starší archivy se po každém běhu automaticky smažou.",
+      "retention_note_plural": "Ponechá {n} nejnovějších záloh; starší archivy se po každém běhu automaticky smažou.",
+      "retention_note_local": "Ponechá {n} nejnovější autozálohu; ruční exporty se nikdy nemažou.",
+      "retention_note_local_plural": "Ponechá {n} nejnovějších autozáloh; ruční exporty se nikdy nemažou.",
+      "working": "Pracuji…",
+      "create": "Vytvořit zálohu",
+      "upload_restore": "Nahrát a obnovit",
+      "col_name": "Název",
+      "col_created": "Vytvořeno",
+      "col_size": "Velikost",
+      "download": "Stáhnout",
+      "restore": "Obnovit",
+      "share": "Sdílet",
+      "delete_title": "Smazat zálohu",
+      "empty_server": "Zatím žádné zálohy — klikni na Vytvořit zálohu.",
+      "empty_local": "Zatím žádné zálohy — klepni na Vytvořit zálohu.",
+      "min_ago": "před {n} min",
+      "hr_ago": "před {n} h",
+      "days_ago": "před {n} dny"
+    },
+    "danger": {
+      "clear_data": "Smazat všechna data",
+      "clear_data_desc": "Trvale smaže všechny záznamy deníku, jídla, pokrmy a tělesné údaje. Nastavení a přihlašovací údaje zůstanou.",
+      "clear_settings": "Smazat všechna nastavení",
+      "clear_settings_desc": "Resetuje všechny preference, přihlašovací údaje a API klíče na výchozí. Data jídel a deníku zůstanou."
+    },
+    "dialogs": {
+      "clear_data_title": "Smazat všechna data",
+      "clear_data_msg": "Trvale smaže všechny záznamy deníku, jídla, pokrmy a tělesné údaje. Nastavení a přihlašovací údaje zůstanou. Tohle nejde vrátit.",
+      "clear_data_confirm": "Smazat všechna data",
+      "clear_settings_title": "Smazat všechna nastavení",
+      "clear_settings_msg": "Resetuje všechny preference, přihlašovací údaje a API klíče na výchozí. Data jídel a deníku zůstanou. Tohle nejde vrátit.",
+      "clear_settings_confirm": "Smazat všechna nastavení",
+      "restore_title": "Obnovit zálohu?",
+      "restore_msg": "Nahradí všechna aktuální data obsahem této zálohy. Tohle nejde vrátit.",
+      "restore_confirm": "Obnovit",
+      "upload_restore_title": "Obnovit z nahraného souboru?",
+      "upload_restore_msg": "Nahradí všechna aktuální data obsahem nahrané zálohy. Tohle nejde vrátit.",
+      "delete_backup_title": "Smazat zálohu?",
+      "delete_backup_msg": "Tento soubor zálohy se trvale odstraní ze serveru.",
+      "delete_backup_confirm": "Smazat",
+      "cancel": "Zrušit"
+    }
+  },
+  "settings_notifications": {
+    "toast": {
+      "test_sent": "Test odeslán, zkontroluj zařízení",
+      "test_failed": "Test selhal: {error}"
+    },
+    "sections": {
+      "delivery": "Doručení",
+      "scheduled_reminders": "Plánované připomínky",
+      "alerts_summaries": "Upozornění a souhrny"
+    },
+    "push": {
+      "configured": "Nastaveno",
+      "send_test": "Poslat test",
+      "test_failed_hint": "Test {provider} selhal, zkontroluj URL a údaje níže",
+      "device": "Oznámení na zařízení",
+      "device_desc": "Upozornění přímo na toto zařízení — nativní na Androidu a vyskakovací okna v prohlížeči/PWA",
+      "push_service": "Push služba",
+      "push_service_desc": "Upozornění přes server přes Apprise, Gotify nebo ntfy — hodí se pro PWA nebo Home Assistant",
+      "option_none": "Žádná",
+      "option_apprise": "Apprise",
+      "option_gotify": "Gotify",
+      "option_ntfy": "ntfy",
+      "apprise_url": "URL serveru Apprise",
+      "apprise_url_ph": "https://apprise.example.com",
+      "apprise_tag": "Tag (volitelné)",
+      "apprise_tag_ph": "např. nutritrace",
+      "gotify_url": "URL serveru Gotify",
+      "gotify_url_ph": "https://gotify.example.com",
+      "gotify_token": "App token",
+      "gotify_token_ph": "Tvůj Gotify app token",
+      "ntfy_url": "URL serveru ntfy",
+      "ntfy_url_ph": "https://ntfy.sh",
+      "ntfy_topic": "Topic",
+      "ntfy_topic_ph": "např. my-nutritrace",
+      "ntfy_token": "Access token (volitelné, pro soukromá témata)",
+      "ntfy_token_ph": "Bearer token",
+      "hide": "Skrýt",
+      "show": "Zobrazit"
+    },
+    "reminders": {
+      "water": "Připomínky vody",
+      "water_desc": "Pravidelné připomínky pít (8–22 hod)",
+      "interval": "Interval",
+      "interval_1h": "Každou 1 hodinu",
+      "interval_1_5h": "Každých 1,5 hodiny",
+      "interval_2h": "Každé 2 hodiny",
+      "interval_3h": "Každé 3 hodiny",
+      "meal": "Připomínky zápisu jídel",
+      "meal_desc": "Denní připomínky k zápisu jídel",
+      "weighin": "Připomínka vážení",
+      "weighin_desc": "Ranní připomínka stoupnout na váhu",
+      "weighin_time": "Čas",
+      "bedtime": "Připomínka spánku",
+      "bedtime_desc": "Večerní postrčení k uklidnění před spánkem",
+      "bedtime_time": "Čas spánku",
+      "wind_down": "Připomínka uklidnění",
+      "wind_down_desc": "Extra postrčení před spaním, ať začneš zpomalovat",
+      "minutes_before": "Minut předtím",
+      "min_15": "15 min",
+      "min_30": "30 min",
+      "min_45": "45 min",
+      "min_60": "60 min",
+      "min_90": "90 min",
+      "smart_message": "Chytrá zpráva",
+      "smart_message_desc": "Upraví připomínku podle včerejšího spánku (pokud se sleduje)"
+    },
+    "alerts": {
+      "goals": "Oslavy cílů",
+      "goals_desc": "Oslaví, když trefíš denní cíl — kalorie, bílkoviny, sacharidy, tuky, voda, kroky, spánek a další",
+      "steps": "Postup k cíli kroků",
+      "steps_desc": "Polední postrčení, když jsi pozadu s cílem kroků",
+      "wellness": "Upozornění Pohody",
+      "wellness_desc": "Varuje při výrazném poklesu HRV, horší kvalitě spánku nebo skoku klidové tepové frekvence",
+      "workouts": "Souhrny tréninků",
+      "workouts_desc": "Shrnutí po synchronizaci tréninku — doba, vzdálenost, spálené kalorie",
+      "weekly": "Týdenní souhrn",
+      "weekly_desc": "Týdenní digest s průměrem kalorií, bílkovin, kroků, spánku, úspěšností cílů a změnou váhy — push i e-mailem (pokud je nastavený)",
+      "delivery_day": "Den doručení",
+      "delivery_time": "Čas doručení",
+      "sync_failures": "Selhání synchronizace",
+      "sync_failures_desc": "Upozornění při selhání synchronizace Fitbit, Garmin nebo Withings",
+      "day_sun": "Ne",
+      "day_mon": "Po",
+      "day_tue": "Út",
+      "day_wed": "St",
+      "day_thu": "Čt",
+      "day_fri": "Pá",
+      "day_sat": "So"
+    }
+  },
+  "wellness_page": {
+    "nav": {
+      "prev_day": "Předchozí den",
+      "next_day": "Další den",
+      "jump_to_date": "Přejít na datum"
+    },
+    "sync": {
+      "health_connect": "Synchronizovat Health Connect",
+      "fitbit": "Synchronizovat Fitbit",
+      "fitbit_with_user": "Synchronizovat Fitbit · {user}",
+      "garmin": "Synchronizovat Garmin",
+      "garmin_with_user": "Synchronizovat Garmin · {user}",
+      "withings": "Synchronizovat Withings",
+      "withings_with_user": "Synchronizovat Withings · Uživatel {user}"
+    },
+    "empty": {
+      "offline": "Data pohody jdou od poskytovatele přes server, takže potřebují připojení. Až budeš znovu online, budou tady.",
+      "no_integrations": "Žádné integrace nejsou zapnuté",
+      "no_integrations_desc": "Zapni Fitbit nebo Withings v <strong>Nastavení → Pohoda</strong> a začni synchronizovat zdravotní data.",
+      "no_device": "Žádné zařízení nepřipojeno",
+      "no_device_native_desc": "Připoj se k serveru NutriTrace v <strong>Nastavení → Připojení k serveru</strong> a propoj zařízení pohody, ať tady uvidíš data.",
+      "no_device_desc": "Připoj zařízení pohody v <strong>Nastavení → Pohoda</strong> a začni sledovat zdravotní data."
+    },
+    "chip": {
+      "activity": "Aktivita",
+      "sleep": "Spánek",
+      "heart": "Srdce",
+      "body": "Tělo",
+      "steps_activity": "Kroky a aktivita",
+      "heart_hrv": "Tep a HRV",
+      "spo2": "SpO2",
+      "breathing_rate": "Dechová frekvence"
+    },
+    "connect": {
+      "fitbit_title": "Připojit Fitbit",
+      "fitbit_desc": "Povol NutriTrace číst tvoje data z Fitbit přes Google Health. Přesměruje tě to na Google ke schválení přístupu a pak zpět sem.",
+      "fitbit_button": "Připojit Fitbit",
+      "connecting": "Připojuji…"
+    },
+    "metric_group": {
+      "sleep_stages": "Fáze spánku",
+      "sleep_debt": "Spánkový dluh",
+      "daily_readiness": "Denní připravenost",
+      "resilience": "Odolnost",
+      "hrv": "HRV",
+      "resting_hr": "Klidový tep",
+      "sleep": "Spánek",
+      "physical_calmness": "Fyzický klid",
+      "activity_balance": "Vyváženost aktivity",
+      "sleep_patterns": "Vzorce spánku"
+    },
+    "hint": {
+      "tap_sync": "Klepni na Synchronizovat a stáhni nejnovější data z připojeného zařízení."
+    }
+  },
+  "statistics_page": {
+    "range": {
+      "last_7d": "Posledních 7 dní",
+      "last_30d": "Posledních 30 dní",
+      "last_90d": "Posledních 90 dní",
+      "this_month": "Tento měsíc",
+      "last_month": "Minulý měsíc",
+      "ytd": "Od začátku roku",
+      "from": "Od",
+      "to": "Do"
+    },
+    "summary": {
+      "average": "Průměr",
+      "min": "Min",
+      "max": "Max",
+      "logged": "Zapsáno",
+      "days_unit": "dní"
+    },
+    "empty": {
+      "no_data": "Pro toto období žádná data",
+      "hint_food_metric": "Zapisuj jídlo do deníku a uvidíš tu trendy",
+      "hint_wellness": "Připoj fitness tracker v Nastavení → Pohoda",
+      "hint_other": "Nic nenalezeno — zkus jiné období"
+    },
+    "history_heading": "Historie"
+  },
+  "accept_invite": {
+    "title": "Vytvořit účet",
+    "verifying": "Ověřuji pozvánku…",
+    "invalid_link": "Tento odkaz na pozvánku je neplatný nebo vypršel. Požádej admina o nový.",
+    "success": "Účet vytvořen! Přesměrovávám…",
+    "intro": "Byl jsi pozván do NutriTrace. Zvol uživatelské jméno a heslo a můžeš začít.",
+    "intro_with_email": "Byl jsi pozván jako <strong>{email}</strong>. Zvol uživatelské jméno a heslo a můžeš začít.",
+    "username_label": "Uživatelské jméno *",
+    "username_placeholder": "Zvol uživatelské jméno",
+    "full_name_label": "Celé jméno (volitelné)",
+    "full_name_placeholder": "Tvoje jméno",
+    "password_label": "Heslo *",
+    "confirm_label": "Potvrď heslo *",
+    "submit": "Vytvořit účet",
+    "creating": "Vytvářím účet…",
+    "errors": {
+      "username_required": "Uživatelské jméno je povinné",
+      "failed": "Účet se nepodařilo vytvořit"
+    }
   }
 }
