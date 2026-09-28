@@ -803,14 +803,17 @@
   $: protGoal  = _macroGoal('proteins', $currentDate);
   $: calPct    = Math.min(100, ((totals.calories||0) / caloriesGoalAdjusted) * 100);
 
-  function formatDate(d) {
+  $: _todayWord = $locale ? $_('diary.day_complete.status.today') : 'Today';
+  $: _yesterdayWord = $locale ? $_('diary.day_complete.status.yesterday') : 'Yesterday';
+
+  function formatDate(d, todayWord = _todayWord, yesterdayWord = _yesterdayWord, lang = $language) {
     if (!d) return '';
     const dt = new Date(d + 'T12:00:00');
     const today = localDateStr();
     const yest  = localDateStr(new Date(Date.now() - 86400000));
-    if (d === today) return $_('diary.day_complete.status.today');
-    if (d === yest)  return $_('diary.day_complete.status.yesterday');
-    return dt.toLocaleDateString($language || undefined, { weekday:'short', month:'short', day:'numeric' });
+    if (d === today) return todayWord;
+    if (d === yest)  return yesterdayWord;
+    return dt.toLocaleDateString(lang || undefined, { weekday:'short', month:'short', day:'numeric' });
   }
 
   function formatDateSub(d, fmt) {
@@ -1873,7 +1876,7 @@
     </button>
     <button class="date-btn" on:click={openDatePicker} title={$_('diary.nav.jump_to_date')}>
       <span class="date-label">
-        {formatDate($currentDate)}
+        {formatDate($currentDate, _todayWord, _yesterdayWord, $language)}
         {#if $diaryShowNotes && (entry?.notes || '').trim()}
           <span class="material-symbols-rounded date-note-indicator" title="Has notes">edit_note</span>
         {/if}
